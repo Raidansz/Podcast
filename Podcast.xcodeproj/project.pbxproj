@@ -14,6 +14,7 @@
 		AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA771079292063CF009FDBAA /* Podcast.xcdatamodeld */; };
 		AA77107D292063D0009FDBAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA77107C292063D0009FDBAA /* Assets.xcassets */; };
 		AA771080292063D0009FDBAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77107E292063D0009FDBAA /* LaunchScreen.storyboard */; };
+		AA771088292064B9009FDBAA /* PodcastsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771087292064B9009FDBAA /* PodcastsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AA77107C292063D0009FDBAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA77107F292063D0009FDBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA771081292063D0009FDBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA771087292064B9009FDBAA /* PodcastsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AA77107E292063D0009FDBAA /* LaunchScreen.storyboard */,
 				AA771081292063D0009FDBAA /* Info.plist */,
 				AA771079292063CF009FDBAA /* Podcast.xcdatamodeld */,
+				AA771087292064B9009FDBAA /* PodcastsTableViewController.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA771088292064B9009FDBAA /* PodcastsTableViewController.swift in Sources */,
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,
 				AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */,
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
