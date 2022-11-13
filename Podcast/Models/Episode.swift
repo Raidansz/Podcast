@@ -12,7 +12,7 @@ struct Episode{
 var enclosure:String
 var titleText:String
     
-    var poster:String
+   
     
 }
 

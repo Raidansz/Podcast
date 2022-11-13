@@ -10,6 +10,8 @@ import UIKit
 class PodcastsTableViewController: UITableViewController {
     var podcasts:[Feed]?
     var url:String = ""
+    var poster:String = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -34,14 +36,15 @@ class PodcastsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         url = podcasts![indexPath.row].url
-        
+       poster = podcasts![indexPath.row].image
         performSegue(withIdentifier: Constants.EPSO_Identifier, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == Constants.EPSO_Identifier){
-            let vc = segue.destination as! EpisodesTableViewController
+            let vc = segue.destination as! EpisodesViewController
             vc.url = url
+            vc.posterImage = poster
         }
     }
     

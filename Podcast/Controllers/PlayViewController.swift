@@ -13,25 +13,24 @@ class PlayViewController: UIViewController {
     var poster:String = "https://engineered.network/img/sleep/defaultEpisodeImage.jpg"
     var player: AVPlayer?
     
-    @IBOutlet weak var posterImage: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-    }
+        let sound = url
+        if let url = URL(string: sound) {
+            self.player = AVPlayer(url: url)
+        }    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        posterImage.sd_setImage(with: URL(string: poster),completed: nil)
+       
         print(poster)
     }
     
     func playSound(){
-        let sound = url
-        if let url = URL(string: sound) {
-            self.player = AVPlayer(url: url)
-        }
+       
         player?.play()
         
     }

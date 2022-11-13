@@ -78,44 +78,66 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ThY-QG-Mce"/>
                     <connections>
-                        <segue destination="jeM-rP-kUm" kind="show" identifier="EPS" id="t4b-r1-UNg"/>
+                        <segue destination="R6L-Ri-F8R" kind="show" identifier="EPS" id="pTB-aD-AfZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnm-lB-RO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2014" y="-42"/>
         </scene>
-        <!--Episodes Table View Controller-->
-        <scene sceneID="LsR-eD-eTi">
+        <!--Episodes View Controller-->
+        <scene sceneID="V2s-9z-Mos">
             <objects>
-                <tableViewController id="jeM-rP-kUm" customClass="EpisodesTableViewController" customModule="Podcast" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sAl-9w-qs9">
+                <viewController id="R6L-Ri-F8R" customClass="EpisodesViewController" customModule="Podcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eVm-qR-1qO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-af-Tff">
+                                <rect key="frame" x="0.0" y="129" width="390" height="649"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zVa-wp-MH1">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="192"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-cd-1qg">
+                                        <rect key="frame" x="0.0" y="220" width="390" height="429"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="429" id="B6u-oO-kAa"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zVa-wp-MH1" secondAttribute="trailing" id="1Pw-hE-QDl"/>
+                                    <constraint firstItem="FmI-cd-1qg" firstAttribute="top" secondItem="zVa-wp-MH1" secondAttribute="bottom" constant="28" id="GC3-74-efU"/>
+                                    <constraint firstItem="zVa-wp-MH1" firstAttribute="leading" secondItem="Ikm-af-Tff" secondAttribute="leading" id="MsC-ml-EVv"/>
+                                    <constraint firstItem="FmI-cd-1qg" firstAttribute="leading" secondItem="Ikm-af-Tff" secondAttribute="leading" id="UvZ-Os-CG5"/>
+                                    <constraint firstAttribute="bottom" secondItem="FmI-cd-1qg" secondAttribute="bottom" id="frs-8d-wjZ"/>
+                                    <constraint firstItem="FmI-cd-1qg" firstAttribute="top" secondItem="zVa-wp-MH1" secondAttribute="bottom" constant="28" id="jJn-pG-sBp"/>
+                                    <constraint firstAttribute="trailing" secondItem="FmI-cd-1qg" secondAttribute="trailing" id="oAL-GP-w7i"/>
+                                    <constraint firstItem="zVa-wp-MH1" firstAttribute="top" secondItem="Ikm-af-Tff" secondAttribute="top" id="tR9-ws-UEk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lWb-12-BgF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Oks-4t-FaH">
-                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oks-4t-FaH" id="ese-vy-yUo">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jeM-rP-kUm" id="Gxt-oa-llT"/>
-                            <outlet property="delegate" destination="jeM-rP-kUm" id="Mq2-UZ-hYY"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="HC9-h8-6Sv"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ikm-af-Tff" secondAttribute="bottom" constant="66" id="3kh-zd-gN8"/>
+                            <constraint firstItem="Ikm-af-Tff" firstAttribute="trailing" secondItem="lWb-12-BgF" secondAttribute="trailing" id="7nG-uM-2bq"/>
+                            <constraint firstItem="Ikm-af-Tff" firstAttribute="leading" secondItem="lWb-12-BgF" secondAttribute="leading" id="Cbz-Ln-ME1"/>
+                            <constraint firstItem="Ikm-af-Tff" firstAttribute="top" secondItem="lWb-12-BgF" secondAttribute="top" constant="38" id="ket-0y-yWj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9W6-Wf-Bzj"/>
                     <connections>
-                        <segue destination="Pht-nQ-e45" kind="show" identifier="play" id="A0d-kz-yMU"/>
+                        <outlet property="poster" destination="zVa-wp-MH1" id="EjX-lr-ePh"/>
+                        <outlet property="tableView" destination="FmI-cd-1qg" id="GqZ-HE-ofu"/>
+                        <segue destination="Pht-nQ-e45" kind="show" identifier="play" id="ZH0-Ul-lnJ"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wmu-cm-Txc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFY-tQ-Vue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="-43"/>
+            <point key="canvasLocation" x="3003.0769230769229" y="-32.701421800947863"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="tAW-hz-Irv">
@@ -146,27 +168,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sGO-20-w5Z">
-                                <rect key="frame" x="16" y="170" width="358" height="438"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0U4-jp-1vO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0U4-jp-1vO" firstAttribute="bottom" secondItem="Thm-Si-opn" secondAttribute="bottom" constant="127.67" id="7xF-4B-8TF"/>
                             <constraint firstItem="Thm-Si-opn" firstAttribute="top" secondItem="0U4-jp-1vO" secondAttribute="top" constant="557" id="G4o-u5-Sdu"/>
-                            <constraint firstItem="sGO-20-w5Z" firstAttribute="leading" secondItem="0U4-jp-1vO" secondAttribute="leading" constant="16" id="Wzy-rM-iMD"/>
                             <constraint firstItem="0U4-jp-1vO" firstAttribute="trailing" secondItem="Thm-Si-opn" secondAttribute="trailing" constant="97.670000000000002" id="Y2N-Va-cEu"/>
                             <constraint firstItem="Thm-Si-opn" firstAttribute="leading" secondItem="0U4-jp-1vO" secondAttribute="leading" constant="97.670000000000002" id="eKf-zi-hsS"/>
-                            <constraint firstItem="sGO-20-w5Z" firstAttribute="top" secondItem="0U4-jp-1vO" secondAttribute="top" constant="79" id="miy-mr-L4g"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="sGO-20-w5Z" secondAttribute="bottom" constant="202" id="t4e-Td-hdX"/>
-                            <constraint firstItem="0U4-jp-1vO" firstAttribute="trailing" secondItem="sGO-20-w5Z" secondAttribute="trailing" constant="16" id="yjV-2P-Zvt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uyv-5c-ZCW"/>
-                    <connections>
-                        <outlet property="posterImage" destination="sGO-20-w5Z" id="YDU-qw-oda"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXl-pY-DPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

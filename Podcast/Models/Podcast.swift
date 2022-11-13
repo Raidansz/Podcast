@@ -16,7 +16,7 @@ var status:String
     var count:Int
     var query:String
     var description:String
-    
+ 
     var feeds:[Feed]
    
 
