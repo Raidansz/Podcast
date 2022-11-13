@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == Constants.segue_Identifier){
+        if (segue.identifier == Constants.POD_Identifier){
             print(11)
             let vc = segue.destination as! PodcastsTableViewController
             
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             
             print("Successfull!!")
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: Constants.segue_Identifier, sender: self)
+                self.performSegue(withIdentifier: Constants.POD_Identifier, sender: self)
             }
             
         }catch{

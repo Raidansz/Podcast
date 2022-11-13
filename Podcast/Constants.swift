@@ -10,7 +10,9 @@ import Foundation
 
 struct Constants{
     public static let API_base = "https://api.podcastindex.org/api/1.0/search/byterm?q="
-    public static let segue_Identifier = "GoTo"
+    public static let POD_Identifier = "GoTo"
     public static let cell_Identifier = "cell"
+    public static let EPSO_Identifier = "EPS"
+    public static let Play_Identifier = "play"
    
 }
