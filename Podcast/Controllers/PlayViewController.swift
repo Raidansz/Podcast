@@ -10,23 +10,27 @@ import AVFoundation
 import SDWebImage
 class PlayViewController: UIViewController {
     var url:String = ""
-    var poster:String = "https://engineered.network/img/sleep/defaultEpisodeImage.jpg"
+    var poster:String = ""
     var player: AVPlayer?
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(url)
         let sound = url
         if let url = URL(string: sound) {
             self.player = AVPlayer(url: url)
-        }    }
+            
+        }
+        
+       
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
-        print(poster)
+     
     }
     
     func playSound(){

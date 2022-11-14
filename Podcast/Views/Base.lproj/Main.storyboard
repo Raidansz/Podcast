@@ -16,31 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-nf-yas">
+                                <rect key="frame" x="16" y="405" width="289" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyS-Fq-X55">
-                                <rect key="frame" x="171" y="640" width="48" height="35"/>
+                                <rect key="frame" x="324" y="405" width="49.666666666666686" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                                 <connections>
                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qa-u0-Ofh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-nf-yas">
-                                <rect key="frame" x="16" y="405" width="358" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IyS-Fq-X55" secondAttribute="trailing" constant="171" id="Fh4-yU-Sii"/>
-                            <constraint firstItem="IyS-Fq-X55" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="549" id="MJj-rU-ZH4"/>
-                            <constraint firstItem="nTM-nf-yas" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="314" id="TTD-d8-cKP"/>
-                            <constraint firstItem="nTM-nf-yas" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VfO-IX-9rb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nTM-nf-yas" secondAttribute="trailing" constant="16" id="aA9-t7-qF3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IyS-Fq-X55" secondAttribute="bottom" constant="135" id="dVP-ED-Luj"/>
-                            <constraint firstItem="IyS-Fq-X55" firstAttribute="top" secondItem="nTM-nf-yas" secondAttribute="bottom" constant="201" id="uVw-a0-9bA"/>
-                            <constraint firstItem="IyS-Fq-X55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="unh-p7-ITO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nTM-nf-yas" secondAttribute="bottom" constant="371" id="I7D-rx-NGz"/>
+                            <constraint firstItem="nTM-nf-yas" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JFT-Bj-NVm"/>
+                            <constraint firstItem="IyS-Fq-X55" firstAttribute="leading" secondItem="nTM-nf-yas" secondAttribute="trailing" constant="19" id="Q7R-jz-pxE"/>
+                            <constraint firstItem="IyS-Fq-X55" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="314" id="Tid-76-Ce7"/>
+                            <constraint firstItem="nTM-nf-yas" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="314" id="aCD-Ia-Oao"/>
+                            <constraint firstItem="IyS-Fq-X55" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="308" id="g0R-20-3ga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IyS-Fq-X55" secondAttribute="bottom" constant="370" id="raI-IU-hIC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IyS-Fq-X55" secondAttribute="trailing" constant="16.329999999999998" id="wwg-E3-6rS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rPY-i5-n7X"/>

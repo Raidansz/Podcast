@@ -14,7 +14,7 @@ class EpisodesViewController: UIViewController {
     var titleText:String = String()
     var enclosure:String = String()
     var posterImage:String = String()
- 
+    var tappedPod:String = String()
     var url:String = ""
     var mp3URL:String = ""
  
@@ -28,15 +28,18 @@ class EpisodesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-                DispatchQueue.main.async {
-                    if let path = URL(string: self.url) {
-                            if let parser = XMLParser(contentsOf: path) {
-                                parser.delegate = self
-                                parser.parse()
-                            }
-                       }
+        DispatchQueue.global(qos: .default).async{
+            
+            if let path = URL(string: self.url) {
+                    if let parser = XMLParser(contentsOf: path) {
+                        parser.delegate = self
+                        parser.parse()
+                    }
+               }
+        }
+                   
 
-            }
+            
         
         
     }
@@ -66,7 +69,7 @@ class EpisodesViewController: UIViewController {
                 
             }
             
-    //<itunes:image href="https://engineered.network/img/sleep/defaultEpisodeImage.jpg"/>
+    
             if elementName == "enclosure"{
                 if attributeDict["url"] != nil{
                     let PSIValue = attributeDict["url"]! as String
@@ -102,20 +105,29 @@ class EpisodesViewController: UIViewController {
                 
                 
                 if(self.elementName == "title"){
-                    
-                    
-                    
                     if (!data.isEmpty) {
                         
                         titleText += data
-                        enclosure += mp3URL
-                      
+                       
                        
                     }
-
                     }
+                
+                
+                if(self.elementName == "enclosure"){
+                   
+                   
+                       
+                        enclosure += mp3URL
+                       
                     
-                    tableView.reloadData()
+                    }
+                
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                   
                     
                 }
                 
@@ -134,11 +146,10 @@ extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
     
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        toBePassedString = Episodes[indexPath.row].enclosure
-        
-        
-        
+       
+          tappedPod = Episodes[indexPath.row].enclosure
         performSegue(withIdentifier: Constants.Play_Identifier, sender: self)
+        
     }
     
     
@@ -147,7 +158,7 @@ extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == Constants.Play_Identifier){
             let vc = segue.destination as! PlayViewController
-            vc.url = enclosure
+            vc.url = self.tappedPod
            
         }
     }
