@@ -158,6 +158,7 @@ extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == Constants.Play_Identifier){
             let vc = segue.destination as! PlayViewController
+            Constants.sharedImage = self.posterImage
             vc.url = self.tappedPod
            
         }

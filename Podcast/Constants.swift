@@ -14,7 +14,9 @@ struct Constants{
     public static let cell_Identifier = "cell"
     public static let EPSO_Identifier = "EPS"
     public static let Play_Identifier = "play"
+    public static var sharedImage = ""
     public static let apiKey = "9YARVVTCERVCNJQJDAAT"
         public static let apiSecret = "dr75yrNvyQQGw4afAYzG7x72n7#Fy3KcevhcXXrj"
+    
    
 }

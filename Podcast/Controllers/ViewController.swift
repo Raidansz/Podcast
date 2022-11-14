@@ -95,7 +95,8 @@ class ViewController: UIViewController {
     
     @IBAction func searchPressed(_ sender: Any) {
         if let query =  toBeLookedFor.text    {
-            self.performRequest(query: query)
+            let suitable = query.replacingOccurrences(of: " ", with: "+")
+            self.performRequest(query: suitable)
           
         }else {return}
     

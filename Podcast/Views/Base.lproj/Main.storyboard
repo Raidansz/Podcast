@@ -147,38 +147,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-Si-opn">
-                                <rect key="frame" x="97.666666666666671" y="648" width="194.66666666666663" height="34.333333333333371"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYA-Go-CHh">
-                                        <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="play:" destination="Pht-nQ-e45" eventType="touchUpInside" id="Nhb-NL-18b"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q51-L6-zVi">
-                                        <rect key="frame" x="152.66666666666669" y="0.0" width="42" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="pause.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="pause:" destination="Pht-nQ-e45" eventType="touchUpInside" id="WQa-Wq-lYG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYA-Go-CHh">
+                                <rect key="frame" x="152" y="589" width="86" height="61"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="play:" destination="Pht-nQ-e45" eventType="touchUpInside" id="Nhb-NL-18b"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EYT-hm-GED">
+                                <rect key="frame" x="60" y="152" width="270" height="316"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0U4-jp-1vO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0U4-jp-1vO" firstAttribute="bottom" secondItem="Thm-Si-opn" secondAttribute="bottom" constant="127.67" id="7xF-4B-8TF"/>
-                            <constraint firstItem="Thm-Si-opn" firstAttribute="top" secondItem="0U4-jp-1vO" secondAttribute="top" constant="557" id="G4o-u5-Sdu"/>
-                            <constraint firstItem="0U4-jp-1vO" firstAttribute="trailing" secondItem="Thm-Si-opn" secondAttribute="trailing" constant="97.670000000000002" id="Y2N-Va-cEu"/>
-                            <constraint firstItem="Thm-Si-opn" firstAttribute="leading" secondItem="0U4-jp-1vO" secondAttribute="leading" constant="97.670000000000002" id="eKf-zi-hsS"/>
+                            <constraint firstItem="EYT-hm-GED" firstAttribute="leading" secondItem="0U4-jp-1vO" secondAttribute="leading" constant="60" id="GJq-7r-hKB"/>
+                            <constraint firstItem="0U4-jp-1vO" firstAttribute="bottom" secondItem="uYA-Go-CHh" secondAttribute="bottom" constant="160" id="Lht-y8-U9B"/>
+                            <constraint firstItem="0U4-jp-1vO" firstAttribute="trailing" secondItem="EYT-hm-GED" secondAttribute="trailing" constant="60" id="P3u-Tj-ZJ6"/>
+                            <constraint firstItem="uYA-Go-CHh" firstAttribute="top" secondItem="EYT-hm-GED" secondAttribute="bottom" constant="121" id="asc-34-l8Y"/>
+                            <constraint firstItem="uYA-Go-CHh" firstAttribute="top" secondItem="0U4-jp-1vO" secondAttribute="top" constant="498" id="jlS-RE-FRa"/>
+                            <constraint firstItem="uYA-Go-CHh" firstAttribute="leading" secondItem="0U4-jp-1vO" secondAttribute="leading" constant="152" id="mBv-9T-Bx5"/>
+                            <constraint firstItem="EYT-hm-GED" firstAttribute="top" secondItem="0U4-jp-1vO" secondAttribute="top" constant="61" id="mZ7-dk-lBe"/>
+                            <constraint firstItem="0U4-jp-1vO" firstAttribute="trailing" secondItem="uYA-Go-CHh" secondAttribute="trailing" constant="152" id="q0j-BR-DEE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uyv-5c-ZCW"/>
+                    <connections>
+                        <outlet property="btnImage" destination="uYA-Go-CHh" id="OPc-V6-Abx"/>
+                        <outlet property="image" destination="EYT-hm-GED" id="2kC-N7-adZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXl-pY-DPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,8 +203,7 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="pause.fill" catalog="system" width="117" height="128"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
