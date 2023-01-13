@@ -14,12 +14,20 @@ class ViewController: UIViewController {
     var podcasts:Podcast?
     
     
+
+    
+    
+    
+    
     @IBOutlet weak var toBeLookedFor: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
+    
     }
+    
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == Constants.POD_Identifier){

@@ -14,6 +14,8 @@ class PlayViewController: UIViewController {
     var player: AVPlayer?
     var status: Bool = false
 
+    @IBOutlet weak var playing: UIView!
+   
     @IBOutlet weak var btnImage: UIButton!
     @IBOutlet weak var image: UIImageView!
     
@@ -33,8 +35,9 @@ class PlayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        image.layer.cornerRadius = 20
-        image.layer.masksToBounds = true
+       // image.layer.cornerRadius = 20
+       // image.layer.masksToBounds = true
+       
         image.sd_setImage(with: URL(string: Constants.sharedImage))
         print(Constants.sharedImage)
     }
