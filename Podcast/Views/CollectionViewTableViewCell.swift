@@ -13,10 +13,10 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     private let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 170)
+        layout.itemSize = CGSize(width: 150, height: 150)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,collectionViewLayout: layout )
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
         
@@ -39,16 +39,21 @@ class CollectionViewTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
 
 extension CollectionViewTableViewCell:UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .cyan
-        cell.layer.cornerRadius = 20
-      
+       
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {return UICollectionViewCell()}
+       // cell.backgroundColor = .black
+        cell.contentView.layer.cornerRadius = 20
+        cell.contentView.layer.masksToBounds = true
+        print(APICaller.shared.feeds?.count ?? 0)
+        //cell.configure(with: "https://production.listennotes.com/podcasts/tracks-to-relax-sleep-meditations-PXc3-leEsBa-kE8wnHiXOgD.1400x1400.jpg")
+        
         return cell
     }
      

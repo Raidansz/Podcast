@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == Constants.POD_Identifier){
-            print(11)
+          
             let vc = segue.destination as! PodcastsTableViewController
             
             vc.podcasts = podcasts?.feeds
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     func performRequest(query:String){
-        print(22)
+      
         
         // prep for crypto
         let timeInSeconds: TimeInterval = Date().timeIntervalSince1970

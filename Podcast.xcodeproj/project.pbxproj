@@ -22,6 +22,7 @@
 		AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB0297206420060004E /* HomeViewController.swift */; };
 		AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */; };
 		AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB4297213AC0060004E /* HeaderUIView.swift */; };
+		AA9FDD3E29736C9B00DEB8ED /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FDD3D29736C9B00DEB8ED /* TitleCollectionViewCell.swift */; };
 		AAB0F18E29212AF20084B7F6 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0F18D29212AF20084B7F6 /* Episode.swift */; };
 		AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */; };
 		AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F192292141570084B7F6 /* SDWebImage */; };
@@ -46,6 +47,7 @@
 		AA7B7AB0297206420060004E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		AA7B7AB4297213AC0060004E /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
+		AA9FDD3D29736C9B00DEB8ED /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAB0F18D29212AF20084B7F6 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				AA771076292063CF009FDBAA /* Main.storyboard */,
 				AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */,
 				AA7B7AB4297213AC0060004E /* HeaderUIView.swift */,
+				AA9FDD3D29736C9B00DEB8ED /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
 				AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */,
+				AA9FDD3E29736C9B00DEB8ED /* TitleCollectionViewCell.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
 				AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */,
 			);
