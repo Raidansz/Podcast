@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TitleCollectionViewCell: UICollectionViewCell {
-    static let identifier = "TitleCollectionViewCell"
+class PosterCollectionViewCell: UICollectionViewCell {
+    static let identifier = "PosterCollectionViewCell"
     
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -32,5 +32,6 @@ class TitleCollectionViewCell: UICollectionViewCell {
     public func configure(with model:String){
         guard let url = URL(string: model) else {return}
         posterImageView.sd_setImage(with: url,completed: nil)
+      
     }
 }

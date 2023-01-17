@@ -10,7 +10,8 @@ import CryptoKit
 
 
 struct Constants{
-    public static let API_base = "https://api.podcastindex.org/api/1.0/search/byterm?q="
+    //public static let API_base = "https://api.podcastindex.org/api/1.0/search/byterm?q="
+    public static let API_base = "https://api.podcastindex.org/api/1.0/"
     public static let POD_Identifier = "GoTo"
     public static let cell_Identifier = "cell"
     public static let EPSO_Identifier = "EPS"
@@ -22,20 +23,21 @@ struct Constants{
    
 }
 
-
+enum APIError:Error{
+    case failedToGetData
+}
 
 
 class APICaller{
     static let shared = APICaller()
     
-     var result = "test"
-     var feeds:[Feed]?
+//     var result = "test"
+//     var feeds:[Feed]?
      
      
     
-   private func performRequest(query:String){
+    func getTrending(completion: @escaping (Swift.Result<[Feed], Error>) -> Void){
       
-        
         // prep for crypto
         let timeInSeconds: TimeInterval = Date().timeIntervalSince1970
         let apiHeaderTime = Int(timeInSeconds)
@@ -46,9 +48,9 @@ class APICaller{
         let hashed = Insecure.SHA1.hash(data: inputData)
         let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
         // ======== Send the request and collect/show the results ========
+       let url = Constants.API_base + "podcasts/trending?max=20?lang=en"
+      
         
-        let url = Constants.API_base + "sleep"
-      // let url = "https://api.podcastindex.org/api/1.0/podcasts/trending?pretty"
         var request = URLRequest(url: URL(string:url)!)
         request.httpMethod = "GET"
         request.addValue( "\(apiHeaderTime)", forHTTPHeaderField: "X-Auth-Date")
@@ -56,47 +58,31 @@ class APICaller{
         request.addValue( hashString, forHTTPHeaderField: "Authorization")
         request.addValue( "SuperPodcastPlayer/1.8", forHTTPHeaderField: "User-Agent")
         let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            if(error != nil){
-                print(error!)
+        let task = session.dataTask(with: request, completionHandler: { data, _, error -> Void in
+           // print(data!)
+            guard let data = data, error == nil else {
+           
+                return
             }
-            
-            if let safeData = data{
-                self.parseJson(data: safeData)
+            do{
+                let results = try JSONDecoder().decode(Result.self, from: data)
+                completion(.success(results.feeds))
+            }catch{
+                completion(.failure(error))
             }
-            
-            
-        })
+
+           
+        }
+        )
         task.resume()
         
     }
     
     
     
-   private func parseJson(data:Data){
-        
-        let parser = JSONDecoder()
-        do{
-            let result = try parser.decode(Podcast.self, from: data)
-            self.feeds = result.feeds
-            
-            print("Successfull!!")
-            
-               // incase seccsuse fulllool
-            
-            
-        }catch{
-            print(error)
-        }
-        
-        
-        
-        
-        
-        
-    }
    
 
     }
     
+
 

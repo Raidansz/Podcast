@@ -6,10 +6,15 @@
 //
 
 import UIKit
-
+enum Sections:Int{
+    case YouMightLike = 0
+    case Trending = 1
+}
 class HomeViewController: UIViewController {
 
     let sectionTitles : [String] = ["You Might Like", "Trending"]
+    
+    
     private let homeFeedTable:UITableView = {
         let table = UITableView(frame: .zero,style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -31,10 +36,21 @@ class HomeViewController: UIViewController {
         homeFeedTable.dataSource = self
         homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 750))
        
+      
     }
     
-
-  
+//    func getTrendingPodcasts(){
+//        APICaller.shared.getTrending { results in
+//            switch results{
+//            case .success(let podcasts):
+//
+//
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+    
 
 }
 
@@ -54,6 +70,44 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for:indexPath) as? CollectionViewTableViewCell else { return UITableViewCell()}
+        
+        switch indexPath.section{
+        case Sections.YouMightLike.rawValue:
+            
+            
+            APICaller.shared.getTrending { results in
+                switch results{
+                case .success(let result):
+                    print("nothing")
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
+                
+            }
+        case Sections.Trending.rawValue:
+            
+            APICaller.shared.getTrending { results in
+                switch results{
+                case .success(let result):
+                    let twoDimArray = result.chunked(by: result.count/2)
+                    if(indexPath.row == 0){
+                        cell.configure(with: twoDimArray[0]) // first row
+                    }else{
+                        cell.configure(with: twoDimArray[1])              // second row
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
+                
+                
+            }
+         
+        default:
+            return UITableViewCell()
+        }
         return cell
     }
     

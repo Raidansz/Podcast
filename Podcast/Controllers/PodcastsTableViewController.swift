@@ -22,8 +22,8 @@ class PodcastsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath)
        
         if let safePocast = podcasts{
-            let title = safePocast[indexPath.row].title
-            cell.textLabel?.text = title
+         //   let title = safePocast[indexPath.row].title
+         //   cell.textLabel?.text = title
           
             
         }
@@ -35,8 +35,8 @@ class PodcastsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        url = podcasts![indexPath.row].url
-       poster = podcasts![indexPath.row].image
+//        url = podcasts![indexPath.row].url
+//       poster = podcasts![indexPath.row].image
         performSegue(withIdentifier: Constants.EPSO_Identifier, sender: self)
     }
     
