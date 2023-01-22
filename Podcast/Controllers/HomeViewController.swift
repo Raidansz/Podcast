@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 enum Sections:Int{
     case Subscriptions = 0
     case YouMightLike = 1
@@ -34,23 +35,14 @@ class HomeViewController: UIViewController {
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 350))
+        let swift = UIHostingController(rootView: SwiftUIView()).view
+        swift?.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 650)
+        homeFeedTable.tableHeaderView = swift
+       
        
         
     }
-    
-//    func getTrendingPodcasts(){
-//        APICaller.shared.getTrending { results in
-//            switch results{
-//            case .success(let podcasts):
-//
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
+
 
 }
 
@@ -60,11 +52,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
         print(indexPath.row)
         DispatchQueue.main.async { [weak self] in
             self?.feed = viewModel.feed
-          //  let vc = EpisodesViewController()
-            
-          //  vc.configure(with: viewModel)
-           // self?.present(vc, animated: true)
-         //   self?.navigationController?.pushViewController(vc, animated: true)
+          
             self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)
         }
     }
@@ -73,8 +61,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if(segue.identifier == Constants.takeMeToPodcast){
               let vc = segue.destination as! EpisodesViewController
-              // vc.url = feed!.url
-               //vc.posterImage = feed!.image
+             
                vc.feed = feed
            }
        }
@@ -179,6 +166,35 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+  
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
+    changeTabBar(hidden: true, animated: true)
+            }
+               else{
+    changeTabBar(hidden: false, animated: true)
+              }
+   }
+    
+    func changeTabBar(hidden:Bool, animated: Bool){
+        var tabBar = self.tabBarController?.tabBar
+        if tabBar!.isHidden == hidden{ return }
+        let frame = tabBar?.frame
+        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
+        let duration:TimeInterval = (animated ? 0.5 : 0.0)
+        tabBar?.isHidden = false
+        if frame != nil
+        {
+            UIView.animate(withDuration: duration,
+                animations: {tabBar!.frame = CGRectOffset(frame!, 0, offset)},
+                completion: {
+                   
+                if $0 {tabBar?.isHidden = hidden}
+            })
+        }
+    }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let defaultOffset = view.safeAreaInsets.top
@@ -190,6 +206,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitles[section]
     }
+    
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else {return }

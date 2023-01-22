@@ -28,6 +28,8 @@
 		AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F192292141570084B7F6 /* SDWebImage */; };
 		AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F194292141570084B7F6 /* SDWebImageMapKit */; };
 		AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99760297DC040006DCC9E /* XmlManager.swift */; };
+		AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */; };
+		AAD99765297DD8A5006DCC9E /* CustomRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		AAD99760297DC040006DCC9E /* XmlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlManager.swift; sourceTree = "<group>"; };
+		AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				AA7B7AB4297213AC0060004E /* HeaderUIView.swift */,
 				AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */,
 				AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */,
+				AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */,
+				AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			files = (
 				AA771088292064B9009FDBAA /* PodcastsTableViewController.swift in Sources */,
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
+				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
 				AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */,
 				AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */,
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,
@@ -238,6 +245,7 @@
 				AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */,
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
+				AAD99765297DD8A5006DCC9E /* CustomRefreshView.swift in Sources */,
 				AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
