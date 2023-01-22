@@ -73,8 +73,9 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if(segue.identifier == Constants.takeMeToPodcast){
               let vc = segue.destination as! EpisodesViewController
-               vc.url = feed!.url
-               vc.posterImage = feed!.image
+              // vc.url = feed!.url
+               //vc.posterImage = feed!.image
+               vc.feed = feed
            }
        }
 

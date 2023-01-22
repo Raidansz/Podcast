@@ -27,6 +27,7 @@
 		AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */; };
 		AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F192292141570084B7F6 /* SDWebImage */; };
 		AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F194292141570084B7F6 /* SDWebImageMapKit */; };
+		AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99760297DC040006DCC9E /* XmlManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPreviewViewModel.swift; sourceTree = "<group>"; };
 		AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		AAD99760297DC040006DCC9E /* XmlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				AA77108929206661009FDBAA /* APICaller.swift */,
+				AAD99760297DC040006DCC9E /* XmlManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,
 				AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */,
 				AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */,
+				AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */,
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
 				AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */,
