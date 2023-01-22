@@ -101,13 +101,13 @@ class ViewController: UIViewController {
 //
 //    }
     
-    @IBAction func searchPressed(_ sender: Any) {
-        if let query =  toBeLookedFor.text    {
-            let suitable = query.replacingOccurrences(of: " ", with: "+")
-          //  self.performRequest(query: suitable)
-          
-        }else {return}
-    
-    }
-    
+//    @IBAction func searchPressed(_ sender: Any) {
+//      //  if let query =  toBeLookedFor.text    {
+//           // let suitable = query.replacingOccurrences(of: " ", with: "+")
+//          //  self.performRequest(query: suitable)
+//
+//        }else {return}
+//
+//    }
+//
 }

@@ -7,14 +7,14 @@
 
 import UIKit
 enum Sections:Int{
-    case YouMightLike = 0
-    case Trending = 1
+    case Subscriptions = 0
+    case YouMightLike = 1
+    case Trending = 2
 }
 class HomeViewController: UIViewController {
-
-    let sectionTitles : [String] = ["You Might Like", "Trending"]
-    
-    
+    var feed:Feed?
+    let sectionTitles : [String] = ["Subscriptions","You Might Like", "Trending"]
+ let myView =  CollectionViewTableViewCell()
     private let homeFeedTable:UITableView = {
         let table = UITableView(frame: .zero,style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -30,13 +30,13 @@ class HomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 750))
+        homeFeedTable.tableHeaderView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 350))
        
-      
+        
     }
     
 //    func getTrendingPodcasts(){
@@ -55,14 +55,52 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
+extension HomeViewController: UITableViewDelegate,UITableViewDataSource,CollectionViewTableViewCellDelegate{
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell,viewModel: PosterPreviewViewModel, indexPath: IndexPath) {
+        print(indexPath.row)
+        DispatchQueue.main.async { [weak self] in
+            self?.feed = viewModel.feed
+          //  let vc = EpisodesViewController()
+            
+          //  vc.configure(with: viewModel)
+           // self?.present(vc, animated: true)
+         //   self?.navigationController?.pushViewController(vc, animated: true)
+            self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)
+        }
+    }
+    
+   
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if(segue.identifier == Constants.takeMeToPodcast){
+              let vc = segue.destination as! EpisodesViewController
+               vc.url = feed!.url
+               vc.posterImage = feed!.image
+           }
+       }
+
+    
+  
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section{
+        case Sections.Subscriptions.rawValue:
+            return 1
+            
+        case Sections.YouMightLike.rawValue:
+            return 2
+            
+        case Sections.Trending.rawValue:
+            return 2
+            
+        default:
+            return 0
+        }
+       
     }
     
     
@@ -70,15 +108,36 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for:indexPath) as? CollectionViewTableViewCell else { return UITableViewCell()}
-        
+        cell.delegate = self
         switch indexPath.section{
-        case Sections.YouMightLike.rawValue:
+        case Sections.Subscriptions.rawValue:
+            APICaller.shared.getTrending { results in
+                switch results{
+                case .success(let result):
+                    let twoDimArray = result.chunked(by: result.count/2)
+                    if(indexPath.row == 0){
+                        cell.configure(with: twoDimArray[0]) // first row
+                    }else{
+                        cell.configure(with: twoDimArray[1])              // second row
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
             
+            
+        case Sections.YouMightLike.rawValue:
             
             APICaller.shared.getTrending { results in
                 switch results{
                 case .success(let result):
-                    print("nothing")
+                    let twoDimArray = result.chunked(by: result.count/2)
+                    if(indexPath.row == 0){
+                        cell.configure(with: twoDimArray[0]) // first row
+                    }else{
+                        cell.configure(with: twoDimArray[1])              // second row
+                    }
                     
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -111,8 +170,9 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 170
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -132,7 +192,8 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else {return }
-        header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        header.textLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
+        header.textLabel?.textColor = .white
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
     }
 }

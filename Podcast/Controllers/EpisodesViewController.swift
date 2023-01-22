@@ -18,13 +18,15 @@ class EpisodesViewController: UIViewController {
     var url:String = ""
     var mp3URL:String = ""
  
+
     @IBOutlet weak var poster: UIImageView!
+    
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cell_Identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "c")
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -43,6 +45,20 @@ class EpisodesViewController: UIViewController {
         
         
     }
+    
+    
+//    func configure(with model: PosterPreviewViewModel){
+//
+//        self.posterImage = model.feed.image
+//        self.url = model.feed.url
+//        print(model.feed.image)
+//      //  guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else{return}
+//
+//      //  webView.load(URLRequest(url: url))
+//    }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -142,43 +158,46 @@ class EpisodesViewController: UIViewController {
             
 
 extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
-    
-    
-    
+
+
+
+
+
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+
           tappedPod = Episodes[indexPath.row].enclosure
         performSegue(withIdentifier: Constants.Play_Identifier, sender: self)
-        
+
     }
-    
-    
-    
+
+
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == Constants.Play_Identifier){
             let vc = segue.destination as! PlayViewController
             Constants.sharedImage = self.posterImage
             vc.url = self.tappedPod
-           
+
         }
     }
-    
-    
-    
+
+
+
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Episodes.count
+         return Episodes.count 
     }
 
-    
+
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath)
+      let cell = tableView.dequeueReusableCell(withIdentifier: "c", for: indexPath)
         cell.textLabel?.text = Episodes[indexPath.row].titleText
         return cell
+
     }
-    
+
 }
-    
-    
-    
+
+
+
 

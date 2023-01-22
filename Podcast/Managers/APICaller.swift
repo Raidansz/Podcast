@@ -9,6 +9,7 @@ import Foundation
 import CryptoKit
 
 
+
 struct Constants{
     //public static let API_base = "https://api.podcastindex.org/api/1.0/search/byterm?q="
     public static let API_base = "https://api.podcastindex.org/api/1.0/"
@@ -20,7 +21,7 @@ struct Constants{
     public static let apiKey = "9YARVVTCERVCNJQJDAAT"
         public static let apiSecret = "dr75yrNvyQQGw4afAYzG7x72n7#Fy3KcevhcXXrj"
     public static let Home_Cell = "Homecell"
-   
+    public static let takeMeToPodcast =  "takeMeToPodcast"
 }
 
 enum APIError:Error{

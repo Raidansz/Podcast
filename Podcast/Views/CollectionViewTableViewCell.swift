@@ -7,9 +7,16 @@
 
 import UIKit
 
-class CollectionViewTableViewCell: UITableViewCell {
+protocol CollectionViewTableViewCellDelegate: AnyObject{
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell,viewModel:PosterPreviewViewModel,indexPath: IndexPath)
+}
 
-  static let identifier = "CollectionViewTableViewCell"
+
+class CollectionViewTableViewCell: UITableViewCell {
+     var delegate:CollectionViewTableViewCellDelegate?
+    
+    
+    static let identifier = "CollectionViewTableViewCell"
     private var feeds:[Feed] = [Feed]()
     
     private let collectionView:UICollectionView = {
@@ -40,7 +47,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     }
     
     public func configure(with feeds: [Feed]){
@@ -53,12 +60,21 @@ class CollectionViewTableViewCell: UITableViewCell {
 }
 
 extension CollectionViewTableViewCell:UICollectionViewDelegate,UICollectionViewDataSource{
+   
     
+
     
-    
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+            collectionView.deselectItem(at: indexPath, animated: true)
+        let feed = feeds[indexPath.row]
+       
+        let viewModel = PosterPreviewViewModel(feed: feed)
+       self.delegate?.collectionViewTableViewCellDidTapCell(self, viewModel: viewModel, indexPath: indexPath)
+        
+       
+            }
+        
     
     
     
@@ -70,7 +86,7 @@ extension CollectionViewTableViewCell:UICollectionViewDelegate,UICollectionViewD
         
         cell.configure(with: feeds[indexPath.row].image)
         
-        cell.contentView.layer.cornerRadius = 20
+        cell.contentView.layer.cornerRadius = 40
         cell.contentView.layer.masksToBounds = true
     
         return cell
