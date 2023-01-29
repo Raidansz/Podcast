@@ -1,13 +1,12 @@
 //
-//  Extensions.swift
+//  Array+Extensions.swift
 //  Podcast
 //
-//  Created by Raidan Shugaa Addin on 2023. 01. 16..
+//  Created by Raidan Shugaa Addin on 2023. 01. 25..
 //
 
 import Foundation
 
- 
 extension Array {
 
     func chunked(by distance: Int) -> [[Element]] {

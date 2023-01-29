@@ -15,6 +15,10 @@ enum Sections:Int{
 class HomeViewController: UIViewController {
     var feed:Feed?
     let sectionTitles : [String] = ["Subscriptions","You Might Like", "Trending"]
+
+    
+ 
+    
  let myView =  CollectionViewTableViewCell()
     private let homeFeedTable:UITableView = {
         let table = UITableView(frame: .zero,style: .grouped)
@@ -49,11 +53,15 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate,UITableViewDataSource,CollectionViewTableViewCellDelegate{
     func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell,viewModel: PosterPreviewViewModel, indexPath: IndexPath) {
-        print(indexPath.row)
+        
         DispatchQueue.main.async { [weak self] in
             self?.feed = viewModel.feed
-          
-            self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)
+            //let vc = EpisodesViewController()
+            let vc = ViewController(item: .search)
+            self?.navigationController?.pushViewController(vc, animated: true)
+          //  self?.present(vc, animated: true)
+          //  self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)
+            print("pressemd")
         }
     }
     
@@ -169,31 +177,31 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
   
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
-    changeTabBar(hidden: true, animated: true)
-            }
-               else{
-    changeTabBar(hidden: false, animated: true)
-              }
+//                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
+//    changeTabBar(hidden: true, animated: true)
+//            }
+//               else{
+//    changeTabBar(hidden: false, animated: true)
+//              }
    }
     
-    func changeTabBar(hidden:Bool, animated: Bool){
-        var tabBar = self.tabBarController?.tabBar
-        if tabBar!.isHidden == hidden{ return }
-        let frame = tabBar?.frame
-        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
-        let duration:TimeInterval = (animated ? 0.5 : 0.0)
-        tabBar?.isHidden = false
-        if frame != nil
-        {
-            UIView.animate(withDuration: duration,
-                animations: {tabBar!.frame = CGRectOffset(frame!, 0, offset)},
-                completion: {
-                   
-                if $0 {tabBar?.isHidden = hidden}
-            })
-        }
-    }
+//    func changeTabBar(hidden:Bool, animated: Bool){
+//        let tabBar = self.tabBarController?.tabBar
+//        if tabBar!.isHidden == hidden{ return }
+//        let frame = tabBar?.frame
+//        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
+//        let duration:TimeInterval = (animated ? 0.5 : 0.0)
+//        tabBar?.isHidden = false
+//        if frame != nil
+//        {
+//            UIView.animate(withDuration: duration,
+//                animations: {tabBar!.frame = CGRectOffset(frame!, 0, offset)},
+//                completion: {
+//
+//                if $0 {tabBar?.isHidden = hidden}
+//            })
+//        }
+//    }
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -21,7 +21,6 @@
 		AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB0297206420060004E /* HomeViewController.swift */; };
 		AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */; };
 		AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB4297213AC0060004E /* HeaderUIView.swift */; };
-		AA7F99B42975DB8700CC1E4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F99B32975DB8700CC1E4D /* Extensions.swift */; };
 		AA8C2D23297B628B00D8A9E9 /* PosterPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */; };
 		AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */; };
 		AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */; };
@@ -29,7 +28,17 @@
 		AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F194292141570084B7F6 /* SDWebImageMapKit */; };
 		AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99760297DC040006DCC9E /* XmlManager.swift */; };
 		AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */; };
-		AAD99765297DD8A5006DCC9E /* CustomRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */; };
+		AAD99768297EEE53006DCC9E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAD99767297EEE53006DCC9E /* SnapKit */; };
+		AAD9976D297EEE9C006DCC9E /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = AAD9976C297EEE9C006DCC9E /* RxGesture */; };
+		AAD99770297EEEF4006DCC9E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AAD9976F297EEEF4006DCC9E /* RxSwift */; };
+		AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99776297EF3B4006DCC9E /* CustomTabBarController.swift */; };
+		AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99777297EF3B4006DCC9E /* CustomItemView.swift */; };
+		AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9977A297EF3B4006DCC9E /* CustomTabBar.swift */; };
+		AAD99789297EF3B4006DCC9E /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD9977E297EF3B4006DCC9E /* CustomTabBarItem.swift */; };
+		AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD997AE2980A43A006DCC9E /* Array+Extensions.swift */; };
+		AAD997B12980A46E006DCC9E /* UiStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD997B02980A46E006DCC9E /* UiStackView+Extensions.swift */; };
+		AAD997B32980A498006DCC9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD997B22980A498006DCC9E /* UIView+Extensions.swift */; };
+		AAD997B52980A4DD006DCC9E /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,13 +58,19 @@
 		AA7B7AB0297206420060004E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		AA7B7AB4297213AC0060004E /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
-		AA7F99B32975DB8700CC1E4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPreviewViewModel.swift; sourceTree = "<group>"; };
 		AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		AAD99760297DC040006DCC9E /* XmlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlManager.swift; sourceTree = "<group>"; };
 		AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshView.swift; sourceTree = "<group>"; };
+		AAD99776297EF3B4006DCC9E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		AAD99777297EF3B4006DCC9E /* CustomItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
+		AAD9977A297EF3B4006DCC9E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		AAD9977E297EF3B4006DCC9E /* CustomTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
+		AAD997AE2980A43A006DCC9E /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		AAD997B02980A46E006DCC9E /* UiStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiStackView+Extensions.swift"; sourceTree = "<group>"; };
+		AAD997B22980A498006DCC9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD99770297EEEF4006DCC9E /* RxSwift in Frameworks */,
+				AAD99768297EEE53006DCC9E /* SnapKit in Frameworks */,
 				AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */,
+				AAD9976D297EEE9C006DCC9E /* RxGesture in Frameworks */,
 				AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +110,6 @@
 				AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */,
 				AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */,
 				AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */,
-				AAD99764297DD8A5006DCC9E /* CustomRefreshView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,15 +141,15 @@
 		AA77106F292063CF009FDBAA /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
+				AA771081292063D0009FDBAA /* Info.plist */,
+				AAD997AB2980A384006DCC9E /* Other */,
+				AAD997A92980A353006DCC9E /* Services */,
+				AAD997A82980A333006DCC9E /* Extensions */,
+				AAD997A72980A320006DCC9E /* Protocols */,
+				AAD997A62980A308006DCC9E /* Modules */,
 				AA7F99B22975DB6E00CC1E4D /* Resources */,
 				AA7BD9072923868B00860930 /* Managers */,
-				AA771070292063CF009FDBAA /* AppDelegate.swift */,
 				AA771072292063CF009FDBAA /* SceneDelegate.swift */,
-				AA4AB64A29219AF20092405B /* Controllers */,
-				AA4AB64B29219B110092405B /* Views */,
-				AA77107C292063D0009FDBAA /* Assets.xcassets */,
-				AA77107E292063D0009FDBAA /* LaunchScreen.storyboard */,
-				AA771081292063D0009FDBAA /* Info.plist */,
 				AA771079292063CF009FDBAA /* Podcast.xcdatamodeld */,
 				AA4AB64C29219B3F0092405B /* Models */,
 			);
@@ -151,9 +168,80 @@
 		AA7F99B22975DB6E00CC1E4D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AA7F99B32975DB8700CC1E4D /* Extensions.swift */,
+				AA77107C292063D0009FDBAA /* Assets.xcassets */,
+				AA77107E292063D0009FDBAA /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AAD99773297EF351006DCC9E /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AAD99776297EF3B4006DCC9E /* CustomTabBarController.swift */,
+				AAD99777297EF3B4006DCC9E /* CustomItemView.swift */,
+				AAD9977A297EF3B4006DCC9E /* CustomTabBar.swift */,
+				AAD9977E297EF3B4006DCC9E /* CustomTabBarItem.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		AAD997A62980A308006DCC9E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AAD99773297EF351006DCC9E /* CustomTabBar */,
+				AA4AB64B29219B110092405B /* Views */,
+				AA4AB64A29219AF20092405B /* Controllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AAD997A72980A320006DCC9E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AAD997A82980A333006DCC9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAD997AE2980A43A006DCC9E /* Array+Extensions.swift */,
+				AAD997B02980A46E006DCC9E /* UiStackView+Extensions.swift */,
+				AAD997B22980A498006DCC9E /* UIView+Extensions.swift */,
+				AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AAD997A92980A353006DCC9E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AAD997AB2980A384006DCC9E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AAD997AD2980A3A1006DCC9E /* Config */,
+				AAD997AC2980A398006DCC9E /* App */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		AAD997AC2980A398006DCC9E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA771070292063CF009FDBAA /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AAD997AD2980A3A1006DCC9E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +263,9 @@
 			packageProductDependencies = (
 				AAB0F192292141570084B7F6 /* SDWebImage */,
 				AAB0F194292141570084B7F6 /* SDWebImageMapKit */,
+				AAD99767297EEE53006DCC9E /* SnapKit */,
+				AAD9976C297EEE9C006DCC9E /* RxGesture */,
+				AAD9976F297EEEF4006DCC9E /* RxSwift */,
 			);
 			productName = Podcast;
 			productReference = AA77106D292063CF009FDBAA /* Podcast.app */;
@@ -206,6 +297,9 @@
 			mainGroup = AA771064292063CF009FDBAA;
 			packageReferences = (
 				AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				AAD99766297EEE53006DCC9E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AAD9976B297EEE9C006DCC9E /* XCRemoteSwiftPackageReference "RxGesture" */,
+				AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = AA77106E292063CF009FDBAA /* Products */;
 			projectDirPath = "";
@@ -234,9 +328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD99789297EF3B4006DCC9E /* CustomTabBarItem.swift in Sources */,
 				AA771088292064B9009FDBAA /* PodcastsTableViewController.swift in Sources */,
+				AAD997B32980A498006DCC9E /* UIView+Extensions.swift in Sources */,
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
+				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
+				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */,
 				AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */,
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,
@@ -245,12 +343,14 @@
 				AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */,
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
-				AAD99765297DD8A5006DCC9E /* CustomRefreshView.swift in Sources */,
+				AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */,
+				AAD997B52980A4DD006DCC9E /* UILabel+Extensions.swift in Sources */,
 				AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */,
+				AAD997B12980A46E006DCC9E /* UiStackView+Extensions.swift in Sources */,
+				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
 				AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */,
-				AA7F99B42975DB8700CC1E4D /* Extensions.swift in Sources */,
 				AA8C2D23297B628B00D8A9E9 /* PosterPreviewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +579,30 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AAD99766297EEE53006DCC9E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AAD9976B297EEE9C006DCC9E /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -491,6 +615,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		AAD99767297EEE53006DCC9E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAD99766297EEE53006DCC9E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		AAD9976C297EEE9C006DCC9E /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAD9976B297EEE9C006DCC9E /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		AAD9976F297EEEF4006DCC9E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

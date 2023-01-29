@@ -4,6 +4,13 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>App Transport Security Settings</key>
+		<dict>
+			<key>Allow Arbitrary Loads</key>
+			<false/>
+		</dict>
+		<key>UIApplicationSupportsTabbedSceneCollection</key>
+		<false/>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

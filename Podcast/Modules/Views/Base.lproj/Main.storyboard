@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KwT-QP-Rc9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -12,14 +12,15 @@
         <scene sceneID="1S4-dr-5q9">
             <objects>
                 <tabBarController id="KwT-QP-Rc9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fgF-n6-2nW"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3jK-nz-VLc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2nV-2R-TdB" kind="relationship" relationship="viewControllers" id="lGc-6n-kkW"/>
-                        <segue destination="z1r-fq-p0k" kind="relationship" relationship="viewControllers" id="hCx-HI-rFD"/>
+                        <segue destination="2nV-2R-TdB" kind="relationship" relationship="viewControllers" id="zGn-w2-dgO"/>
+                        <segue destination="z1r-fq-p0k" kind="relationship" relationship="viewControllers" id="OUb-qK-MQ7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmY-5o-bFw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -38,7 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6L9-48-Fph"/>
                     <connections>
-                        <segue destination="R6L-Ri-F8R" kind="show" identifier="takeMeToPodcast" id="pE6-0x-9tK"/>
+                        <segue destination="R6L-Ri-F8R" kind="show" identifier="takeMeToPodcast" id="eKx-GD-wul"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDM-DN-vcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -73,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Zpc-Yb-2Cx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zpc-Yb-2Cx">
                                 <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zpc-Yb-2Cx" id="0Qj-Un-cIb">
@@ -108,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="264" width="390" height="580"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="c" id="3Jj-mv-wWs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3Jj-mv-wWs">
                                         <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Jj-mv-wWs" id="pGy-ns-Xbz">
@@ -167,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZJg-6i-nUd" kind="relationship" relationship="rootViewController" id="bPK-Xj-dqf"/>
+                        <segue destination="ZJg-6i-nUd" kind="relationship" relationship="rootViewController" id="Hgh-L8-kkq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBn-FO-Mhv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -237,7 +238,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pE6-0x-9tK"/>
+        <segue reference="pTB-aD-AfZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
