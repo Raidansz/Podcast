@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="oHn-VP-fgY">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-Nh-60u">
+                    <rect key="frame" x="24" y="59" width="345" height="735"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqE-85-YG5">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="vru-xp-p27"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-yu-hjU">
+                            <rect key="frame" x="0.0" y="44" width="345" height="345"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="L2L-yu-hjU" secondAttribute="height" id="wYx-LO-KzV"/>
+                            </constraints>
+                        </imageView>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BvP-b6-BCm">
+                            <rect key="frame" x="-2" y="389" width="349" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="d9p-cv-jDc"/>
+                            </constraints>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQy-ec-DUo">
+                            <rect key="frame" x="0.0" y="425" width="345" height="310"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="A3F-C5-4nV"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="A3F-C5-4nV" firstAttribute="trailing" secondItem="OMW-Nh-60u" secondAttribute="trailing" constant="24" id="uQ8-Zo-Ras"/>
+                <constraint firstItem="OMW-Nh-60u" firstAttribute="leading" secondItem="A3F-C5-4nV" secondAttribute="leading" constant="24" id="xDG-ZA-Liq"/>
+                <constraint firstItem="OMW-Nh-60u" firstAttribute="top" secondItem="A3F-C5-4nV" secondAttribute="top" id="yHm-xN-8Ys"/>
+                <constraint firstItem="A3F-C5-4nV" firstAttribute="bottom" secondItem="OMW-Nh-60u" secondAttribute="bottom" constant="24" id="zlF-g2-syt"/>
+            </constraints>
+            <point key="canvasLocation" x="204" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="a" width="824" height="890"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

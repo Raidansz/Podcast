@@ -10,6 +10,10 @@
 		AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AB648292191660092405B /* EpisodesViewController.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
 		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
+		AA628143298836DA002967DD /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA628141298836DA002967DD /* EpisodeTableViewCell.swift */; };
+		AA628144298836DA002967DD /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA628142298836DA002967DD /* EpisodeTableViewCell.xib */; };
+		AA62814629884664002967DD /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA62814529884664002967DD /* PlayerDetailsView.xib */; };
+		AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA628147298849CE002967DD /* PlayerDetailsView.swift */; };
 		AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771070292063CF009FDBAA /* AppDelegate.swift */; };
 		AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771072292063CF009FDBAA /* SceneDelegate.swift */; };
 		AA771075292063CF009FDBAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771074292063CF009FDBAA /* ViewController.swift */; };
@@ -47,6 +51,10 @@
 		AA4AB648292191660092405B /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA62813F29882458002967DD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
+		AA628141298836DA002967DD /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		AA628142298836DA002967DD /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		AA62814529884664002967DD /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
+		AA628147298849CE002967DD /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		AA77106D292063CF009FDBAA /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA771070292063CF009FDBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA771072292063CF009FDBAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +123,10 @@
 				AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */,
 				AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */,
 				AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */,
+				AA628141298836DA002967DD /* EpisodeTableViewCell.swift */,
+				AA628142298836DA002967DD /* EpisodeTableViewCell.xib */,
+				AA62814529884664002967DD /* PlayerDetailsView.xib */,
+				AA628147298849CE002967DD /* PlayerDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA771080292063D0009FDBAA /* LaunchScreen.storyboard in Resources */,
+				AA62814629884664002967DD /* PlayerDetailsView.xib in Resources */,
+				AA628144298836DA002967DD /* EpisodeTableViewCell.xib in Resources */,
 				AA77107D292063D0009FDBAA /* Assets.xcassets in Resources */,
 				AA771078292063CF009FDBAA /* Main.storyboard in Resources */,
 			);
@@ -318,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA628143298836DA002967DD /* EpisodeTableViewCell.swift in Sources */,
 				AAD99789297EF3B4006DCC9E /* CustomTabBarItem.swift in Sources */,
 				AA771088292064B9009FDBAA /* PodcastsTableViewController.swift in Sources */,
 				AAD997B32980A498006DCC9E /* UIView+Extensions.swift in Sources */,
@@ -337,6 +352,7 @@
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
 				AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */,
 				AAD997B52980A4DD006DCC9E /* UILabel+Extensions.swift in Sources */,
+				AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */,
 				AA7B7AB5297213AC0060004E /* HeaderUIView.swift in Sources */,
 				AAD997B12980A46E006DCC9E /* UiStackView+Extensions.swift in Sources */,
 				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,

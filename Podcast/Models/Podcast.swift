@@ -31,7 +31,8 @@ struct Feed:Codable{
 struct Episode{
 var enclosure:String
 var titleText:String
-    
+    //var pubDate:Date
+   // var description:String
 }
 
 

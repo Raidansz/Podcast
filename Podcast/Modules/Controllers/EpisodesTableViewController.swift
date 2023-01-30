@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class EpisodesTableViewController: UITableViewController {
 
     
@@ -34,19 +34,33 @@ class EpisodesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cell_Identifier)
-        
+       
+        let nib = UINib(nibName: EpisodeTableViewCell().identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Constants.cell_Identifier)
         
     }
 
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 134
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return XmlManager.shared.Episodes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath)
-        cell.textLabel?.text = XmlManager.shared.Episodes[indexPath.row].titleText
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? EpisodeTableViewCell
+       
+        cell?.episode = XmlManager.shared.Episodes[indexPath.row]
+        cell?.episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
+        return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = XmlManager.shared.Episodes[indexPath.row]
+        let window = UIApplication.shared.keyWindow
+        let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as! UIView
+        playerDetailsView.frame = self.view.frame
+        window?.addSubview(playerDetailsView)
+        
     }
 }
