@@ -14,11 +14,7 @@ class EpisodesViewController: UIViewController {
     var url:String = ""
 
 
-    @IBOutlet weak var poster: UIImageView!
 
-    @IBOutlet weak var podcastTitle: UILabel!
-
-    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +49,7 @@ class EpisodesViewController: UIViewController {
         super.viewWillAppear(animated)
         //poster.sd_setImage(with: URL(string: posterImage))
         if let safefeed = feed{
-            podcastTitle.text = safefeed.title
+           // podcastTitle.text = safefeed.title
         }
 
       //  poster.layer.cornerRadius = 20

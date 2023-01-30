@@ -28,14 +28,13 @@ class HomeViewController: UIViewController {
         return table
     }()
     
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.definesPresentationContext = true
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
@@ -56,8 +55,8 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
         
         DispatchQueue.main.async { [weak self] in
             self?.feed = viewModel.feed
-            //let vc = EpisodesViewController()
-            let vc = ViewController(item: .search)
+            let vc = EpisodesTableViewController()
+            vc.podcast = self?.feed
             self?.navigationController?.pushViewController(vc, animated: true)
           //  self?.present(vc, animated: true)
           //  self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)

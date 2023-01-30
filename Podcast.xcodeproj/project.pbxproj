@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AB648292191660092405B /* EpisodesViewController.swift */; };
+		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
+		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
 		AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771070292063CF009FDBAA /* AppDelegate.swift */; };
 		AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771072292063CF009FDBAA /* SceneDelegate.swift */; };
 		AA771075292063CF009FDBAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771074292063CF009FDBAA /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		AA4AB648292191660092405B /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AA62813F29882458002967DD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		AA77106D292063CF009FDBAA /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA771070292063CF009FDBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA771072292063CF009FDBAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				AAB0F18F29213E0E0084B7F6 /* PlayViewController.swift */,
 				AA4AB648292191660092405B /* EpisodesViewController.swift */,
 				AA7B7AB0297206420060004E /* HomeViewController.swift */,
+				AA62813F29882458002967DD /* EpisodesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,9 +148,7 @@
 			children = (
 				AA771081292063D0009FDBAA /* Info.plist */,
 				AAD997AB2980A384006DCC9E /* Other */,
-				AAD997A92980A353006DCC9E /* Services */,
 				AAD997A82980A333006DCC9E /* Extensions */,
-				AAD997A72980A320006DCC9E /* Protocols */,
 				AAD997A62980A308006DCC9E /* Modules */,
 				AA7F99B22975DB6E00CC1E4D /* Resources */,
 				AA7BD9072923868B00860930 /* Managers */,
@@ -195,13 +198,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		AAD997A72980A320006DCC9E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		AAD997A82980A333006DCC9E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,15 +205,9 @@
 				AAD997B02980A46E006DCC9E /* UiStackView+Extensions.swift */,
 				AAD997B22980A498006DCC9E /* UIView+Extensions.swift */,
 				AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */,
+				AA62813D29873D6A002967DD /* String+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		AAD997A92980A353006DCC9E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		AAD997AB2980A384006DCC9E /* Other */ = {
@@ -335,6 +325,8 @@
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
+				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
+				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
 				AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */,
 				AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */,
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,

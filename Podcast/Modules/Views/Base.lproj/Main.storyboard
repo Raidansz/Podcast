@@ -38,9 +38,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="6L9-48-Fph"/>
-                    <connections>
-                        <segue destination="R6L-Ri-F8R" kind="show" identifier="takeMeToPodcast" id="eKx-GD-wul"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDM-DN-vcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="2774" y="1351"/>
         </scene>
-        <!--Episodes View Controller-->
+        <!--View Controller-->
         <scene sceneID="V2s-9z-Mos">
             <objects>
-                <viewController id="R6L-Ri-F8R" customClass="EpisodesViewController" customModule="Podcast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R6L-Ri-F8R" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVm-qR-1qO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,9 +234,6 @@
             <point key="canvasLocation" x="2775" y="-230"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pTB-aD-AfZ"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
