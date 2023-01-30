@@ -61,6 +61,7 @@ class EpisodesTableViewController: UITableViewController {
         //UIApplication.shared.keyWindow
         let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as! PlayerDetailsView
         playerDetailsView.episode = episode
+        playerDetailsView.episodeImage.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
         playerDetailsView.frame = self.view.frame
         window?.addSubview(playerDetailsView)
         

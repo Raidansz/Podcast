@@ -6,12 +6,22 @@
 //
 
 import UIKit
-
+import AVFoundation
 class PlayerDetailsView:UIView{
+    var player: AVPlayer?
+    
+    
     
     var episode:Episode!{
         didSet{
             episodeLabel.text = episode.titleText
+            
+            let sound = episode.enclosure
+            if let url = URL(string: sound) {
+                self.player = AVPlayer(url: url)
+                
+            }
+            
         }
     }
     @IBOutlet weak var episodeLabel: UILabel!{
@@ -21,10 +31,11 @@ class PlayerDetailsView:UIView{
     }
     
     @IBAction func playPauseButton(_ sender: Any) {
+        player?.play()
     }
     @IBOutlet weak var episodeImage: UIImageView!{
         didSet{
-           
+        
         }
     }
     
