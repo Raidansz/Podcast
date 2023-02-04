@@ -55,6 +55,14 @@ class EpisodesTableViewController: UITableViewController {
         return cell ?? UITableViewCell()
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let defaultOffset = view.safeAreaInsets.top
+          let offset = scrollView.contentOffset.y + defaultOffset
+  
+          navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+      }
+        
+        
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episode = XmlManager.shared.Episodes[indexPath.row]
         let window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first

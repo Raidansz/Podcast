@@ -175,14 +175,14 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     }
   
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
-//    changeTabBar(hidden: true, animated: true)
-//            }
-//               else{
-//    changeTabBar(hidden: false, animated: true)
-//              }
-   }
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+////                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
+////    changeTabBar(hidden: true, animated: true)
+////            }
+////               else{
+////    changeTabBar(hidden: false, animated: true)
+////              }
+//   }
     
 //    func changeTabBar(hidden:Bool, animated: Bool){
 //        let tabBar = self.tabBarController?.tabBar
@@ -203,12 +203,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
 //    }
     
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let defaultOffset = view.safeAreaInsets.top
-        let offset = scrollView.contentOffset.y + defaultOffset
-        
-        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
-    }
+
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitles[section]
