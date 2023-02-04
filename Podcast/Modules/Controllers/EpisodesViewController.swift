@@ -87,7 +87,7 @@ extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath)
-        cell.textLabel?.text = XmlManager.shared.Episodes[indexPath.row].titleText
+        //cell.textLabel?.text = ep[indexPath.row].title
         return cell
 
     }

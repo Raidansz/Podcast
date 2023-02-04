@@ -14,7 +14,7 @@ class PlayerDetailsView:UIView{
     
     var episode:Episode!{
         didSet{
-            episodeLabel.text = episode.titleText
+            episodeLabel.text = episode.title
             
             let sound = episode.enclosure
             if let url = URL(string: sound) {

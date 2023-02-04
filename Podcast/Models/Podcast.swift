@@ -30,9 +30,9 @@ struct Feed:Codable{
 // Extracting Episodes using XML parser
 struct Episode{
 var enclosure:String
-var titleText:String
-    //var pubDate:Date
-   // var description:String
+var title:String
+    var pubDate:Date
+    var description:String
 }
 
 

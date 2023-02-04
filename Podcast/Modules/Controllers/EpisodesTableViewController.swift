@@ -7,8 +7,9 @@
 
 import UIKit
 import SDWebImage
+import FeedKit
 class EpisodesTableViewController: UITableViewController {
-
+var episodes = [Episode]()
     
     var podcast: Feed? {
         didSet{
@@ -21,13 +22,46 @@ class EpisodesTableViewController: UITableViewController {
         }
     }
     private func  fetchEpisode(with url:String){
-        DispatchQueue.global(qos: .default).async{
-            XmlManager.shared.doParse(path: url)
-
+        let parser = FeedParser(URL: URL(string: url )!)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            switch result {
+            case .success(let feed):
+                
+                // Grab the parsed feed directly as an optional rss, atom or json feed object
+                
+                
+                // Or alternatively...
+                switch feed {
+                case let .atom(feed):
+                    break       // Atom Syndication Format Feed Model
+                case let .rss(feed):
+                    feed.items?.forEach({ (epi) in
+                        
+                        let episode = Episode(enclosure:epi.enclosure?.attributes?.url ?? "" , title: epi.title ?? "", pubDate: epi.pubDate ?? Date(), description: epi.description ?? "")
+                        self.episodes.append(episode)
+                        
+                    })
+                    
+                    break        // Really Simple Syndication Feed Model
+                case let .json(feed):
+                    break       // JSON Feed Model
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-       }
+            }
         }
+        
+//        DispatchQueue.global(qos: .default).async{
+//            XmlManager.shared.doParse(path: url)
+//
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//       }
+//        }
         
     }
     
@@ -44,13 +78,13 @@ class EpisodesTableViewController: UITableViewController {
         return 134
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return XmlManager.shared.Episodes.count
+        return episodes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? EpisodeTableViewCell
        
-        cell?.episode = XmlManager.shared.Episodes[indexPath.row]
+        cell?.episode = episodes[indexPath.row]
         cell?.episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
         return cell ?? UITableViewCell()
     }
@@ -64,7 +98,7 @@ class EpisodesTableViewController: UITableViewController {
         
         
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let episode = XmlManager.shared.Episodes[indexPath.row]
+        let episode = episodes[indexPath.row]
         let window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first
         //UIApplication.shared.keyWindow
         let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as! PlayerDetailsView

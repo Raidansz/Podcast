@@ -52,8 +52,8 @@ class XmlManager:NSObject,XMLParserDelegate{
         // 2
         func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
             if elementName == "item" {
-                let episode = Episode(enclosure: enclosure,titleText:titleText)
-                Episodes.append(episode)
+               // let episode = Episode(enclosure: enclosure,titleText:titleText)
+              //  Episodes.append(episode)
             }
         }
         

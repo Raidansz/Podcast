@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA040227298EF838007ECD54 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA040226298EF838007ECD54 /* FeedKit */; };
 		AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AB648292191660092405B /* EpisodesViewController.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
 		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
@@ -93,6 +94,7 @@
 				AAD99770297EEEF4006DCC9E /* RxSwift in Frameworks */,
 				AAD99768297EEE53006DCC9E /* SnapKit in Frameworks */,
 				AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */,
+				AA040227298EF838007ECD54 /* FeedKit in Frameworks */,
 				AAD9976D297EEE9C006DCC9E /* RxGesture in Frameworks */,
 				AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */,
 			);
@@ -268,6 +270,7 @@
 				AAD99767297EEE53006DCC9E /* SnapKit */,
 				AAD9976C297EEE9C006DCC9E /* RxGesture */,
 				AAD9976F297EEEF4006DCC9E /* RxSwift */,
+				AA040226298EF838007ECD54 /* FeedKit */,
 			);
 			productName = Podcast;
 			productReference = AA77106D292063CF009FDBAA /* Podcast.app */;
@@ -302,6 +305,7 @@
 				AAD99766297EEE53006DCC9E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				AAD9976B297EEE9C006DCC9E /* XCRemoteSwiftPackageReference "RxGesture" */,
 				AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
 			productRefGroup = AA77106E292063CF009FDBAA /* Products */;
 			projectDirPath = "";
@@ -579,6 +583,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -614,6 +626,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AA040226298EF838007ECD54 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
 		AAB0F192292141570084B7F6 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
