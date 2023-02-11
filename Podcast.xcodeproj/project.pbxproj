@@ -12,6 +12,8 @@
 		AA04022B29983912007ECD54 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022A29983912007ECD54 /* Episode.swift */; };
 		AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022E2998399D007ECD54 /* NetworkingService.swift */; };
 		AA040231299839EC007ECD54 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA040230299839EC007ECD54 /* iTunesAPI.swift */; };
+		AA04023429983A4D007ECD54 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AA04023329983A4D007ECD54 /* Moya */; };
+		AA04023729983C54007ECD54 /* PodcastsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04023629983C54007ECD54 /* PodcastsService.swift */; };
 		AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AB648292191660092405B /* EpisodesViewController.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
 		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
@@ -57,6 +59,7 @@
 		AA04022A29983912007ECD54 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		AA04022E2998399D007ECD54 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		AA040230299839EC007ECD54 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
+		AA04023629983C54007ECD54 /* PodcastsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsService.swift; sourceTree = "<group>"; };
 		AA4AB648292191660092405B /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA62813F29882458002967DD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 				AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */,
 				AA040227298EF838007ECD54 /* FeedKit in Frameworks */,
 				AAD9976D297EEE9C006DCC9E /* RxGesture in Frameworks */,
+				AA04023429983A4D007ECD54 /* Moya in Frameworks */,
 				AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +118,7 @@
 		AA04022C2998395E007ECD54 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA04023529983C37007ECD54 /* PodcastsService */,
 				AA04022D29983977007ECD54 /* Networking */,
 			);
 			path = Services;
@@ -126,6 +131,14 @@
 				AA040230299839EC007ECD54 /* iTunesAPI.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AA04023529983C37007ECD54 /* PodcastsService */ = {
+			isa = PBXGroup;
+			children = (
+				AA04023629983C54007ECD54 /* PodcastsService.swift */,
+			);
+			path = PodcastsService;
 			sourceTree = "<group>";
 		};
 		AA4AB64A29219AF20092405B /* Controllers */ = {
@@ -299,6 +312,7 @@
 				AAD9976C297EEE9C006DCC9E /* RxGesture */,
 				AAD9976F297EEEF4006DCC9E /* RxSwift */,
 				AA040226298EF838007ECD54 /* FeedKit */,
+				AA04023329983A4D007ECD54 /* Moya */,
 			);
 			productName = Podcast;
 			productReference = AA77106D292063CF009FDBAA /* Podcast.app */;
@@ -334,6 +348,7 @@
 				AAD9976B297EEE9C006DCC9E /* XCRemoteSwiftPackageReference "RxGesture" */,
 				AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */,
+				AA04023229983A4D007ECD54 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = AA77106E292063CF009FDBAA /* Products */;
 			projectDirPath = "";
@@ -372,6 +387,7 @@
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
 				AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */,
+				AA04023729983C54007ECD54 /* PodcastsService.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
 				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
@@ -623,6 +639,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		AA04023229983A4D007ECD54 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -662,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */;
 			productName = FeedKit;
+		};
+		AA04023329983A4D007ECD54 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA04023229983A4D007ECD54 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		AAB0F192292141570084B7F6 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

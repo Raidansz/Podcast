@@ -16,7 +16,7 @@ class PlayerDetailsView:UIView{
         didSet{
             episodeLabel.text = episode.title
             
-            let sound = episode.enclosure
+            let sound = episode.streamUrl
             if let url = URL(string: sound) {
                 self.player = AVPlayer(url: url)
                 

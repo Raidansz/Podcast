@@ -14,6 +14,31 @@ struct Result:Codable {
     var feeds:[Feed] // Podcasts
 }
 
+//final class Podcast: NSObject, Decodable, NSCoding {
+//
+//    var trackName: String?
+//    var artistName: String?
+//    var artworkUrl600: String?
+//    var trackCount: Int?
+//    var feedUrlSting: String?
+//
+//    func encode(with aCoder: NSCoder) {
+//        print("Trying to transform Podcast into Data")
+//        aCoder.encode(trackName ?? "", forKey: Keys.trackNameKey)
+//        aCoder.encode(artistName ?? "", forKey: Keys.artistNameKey)
+//        aCoder.encode(artworkUrl600 ?? "", forKey: Keys.artworkKey)
+//        aCoder.encode(feedUrlSting ?? "", forKey: Keys.feedKey)
+//    }
+//
+//    init?(coder aDecoder: NSCoder) {
+//        print("Trying to turn Data into Podcast")
+//        trackName = aDecoder.decodeObject(forKey: Keys.) as? String
+//        artistName = aDecoder.decodeObject(forKey: Keys.artistNameKey) as? String
+//        artworkUrl600 = aDecoder.decodeObject(forKey: Keys.artworkKey) as? String
+//        feedUrlSting = aDecoder.decodeObject(forKey: Keys.feedKey) as? String
+//    }
+//}
+
 
 // Actual array of podcasts
 struct Feed:Codable{
@@ -27,13 +52,6 @@ struct Feed:Codable{
 }
 
 
-// Extracting Episodes using XML parser
-//struct Episode{
-//var enclosure:String
-//var title:String
-//    var pubDate:Date
-//    var description:String
-//}
 
 
 

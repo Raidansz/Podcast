@@ -21,12 +21,16 @@ class EpisodeTableViewCell: UITableViewCell {
                    
                    let dateFormatter = DateFormatter()
                    dateFormatter.dateFormat = "MMM dd, yyyy"
-                  pubDate.text = dateFormatter.string(from: Date())
-            
+            pubDate.text = dateFormatter.string(from: episode.pubDate)
+            title.text = episode.title
+           
+            eDescription.text = episode.description.description
         }
     }
     
     @IBOutlet weak var episodeImageView: UIImageView!
+    
+    @IBOutlet weak var eDescription: UILabel!
     
     @IBOutlet weak var pubDate: UILabel!
     

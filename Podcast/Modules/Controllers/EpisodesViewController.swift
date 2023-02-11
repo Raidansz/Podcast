@@ -65,7 +65,7 @@ extension EpisodesViewController:UITableViewDelegate,UITableViewDataSource{
 
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-          tappedPod = XmlManager.shared.Episodes[indexPath.row].enclosure
+         tappedPod = XmlManager.shared.Episodes[indexPath.row].streamUrl
         performSegue(withIdentifier: Constants.Play_Identifier, sender: self)
 
     }

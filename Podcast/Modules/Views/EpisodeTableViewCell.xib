@@ -57,7 +57,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="episodeDescription" destination="KOU-bR-j2i" id="zag-Xt-R49"/>
+                <outlet property="eDescription" destination="KOU-bR-j2i" id="YZ7-Dj-5cr"/>
                 <outlet property="episodeImageView" destination="cjq-Sy-U88" id="IXH-ha-2Ag"/>
                 <outlet property="pubDate" destination="30Q-DI-Bu6" id="Veb-f6-vOX"/>
                 <outlet property="title" destination="fhe-wl-TJM" id="wmh-Tv-YPS"/>
