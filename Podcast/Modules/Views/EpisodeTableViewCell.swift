@@ -16,7 +16,7 @@ class EpisodeTableViewCell: UITableViewCell {
            //        cell.contentView.layer.masksToBounds = true
                    episodeImageView.layer.cornerRadius = 30
                   episodeImageView.layer.masksToBounds = true
-            title.text = episode.title
+           // title.text = episode.title
                 //  episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
                    
                    let dateFormatter = DateFormatter()

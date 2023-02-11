@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AA040227298EF838007ECD54 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA040226298EF838007ECD54 /* FeedKit */; };
+		AA040229299838D9007ECD54 /* RSSFeed+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */; };
+		AA04022B29983912007ECD54 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022A29983912007ECD54 /* Episode.swift */; };
+		AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022E2998399D007ECD54 /* NetworkingService.swift */; };
+		AA040231299839EC007ECD54 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA040230299839EC007ECD54 /* iTunesAPI.swift */; };
 		AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AB648292191660092405B /* EpisodesViewController.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
 		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RSSFeed+Extension.swift"; sourceTree = "<group>"; };
+		AA04022A29983912007ECD54 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		AA04022E2998399D007ECD54 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		AA040230299839EC007ECD54 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
 		AA4AB648292191660092405B /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA62813F29882458002967DD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA04022C2998395E007ECD54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA04022D29983977007ECD54 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA04022D29983977007ECD54 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA04022E2998399D007ECD54 /* NetworkingService.swift */,
+				AA040230299839EC007ECD54 /* iTunesAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		AA4AB64A29219AF20092405B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AA77108B292066C9009FDBAA /* Podcast.swift */,
+				AA04022A29983912007ECD54 /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +186,7 @@
 		AA77106F292063CF009FDBAA /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
+				AA04022C2998395E007ECD54 /* Services */,
 				AA771081292063D0009FDBAA /* Info.plist */,
 				AAD997AB2980A384006DCC9E /* Other */,
 				AAD997A82980A333006DCC9E /* Extensions */,
@@ -220,6 +247,7 @@
 				AAD997B22980A498006DCC9E /* UIView+Extensions.swift */,
 				AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */,
 				AA62813D29873D6A002967DD /* String+Extensions.swift */,
+				AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,12 +371,14 @@
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
+				AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
 				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
 				AAB0F19029213E0E0084B7F6 /* PlayViewController.swift in Sources */,
 				AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */,
 				AA771075292063CF009FDBAA /* ViewController.swift in Sources */,
+				AA04022B29983912007ECD54 /* Episode.swift in Sources */,
 				AA4AB649292191660092405B /* EpisodesViewController.swift in Sources */,
 				AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */,
 				AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */,
@@ -362,6 +392,8 @@
 				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
+				AA040231299839EC007ECD54 /* iTunesAPI.swift in Sources */,
+				AA040229299838D9007ECD54 /* RSSFeed+Extension.swift in Sources */,
 				AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */,
 				AA8C2D23297B628B00D8A9E9 /* PosterPreviewViewModel.swift in Sources */,
 			);

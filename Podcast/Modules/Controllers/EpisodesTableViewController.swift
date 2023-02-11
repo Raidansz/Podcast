@@ -23,7 +23,7 @@ var episodes = [Episode]()
     }
     private func  fetchEpisode(with url:String){
         let parser = FeedParser(URL: URL(string: url )!)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             switch result {
             case .success(let feed):
                 
@@ -32,7 +32,7 @@ var episodes = [Episode]()
                 
                 // Or alternatively...
                 switch feed {
-                case let .atom(feed):
+                case .atom(_):
                     break       // Atom Syndication Format Feed Model
                 case let .rss(feed):
                     feed.items?.forEach({ (epi) in
@@ -43,7 +43,7 @@ var episodes = [Episode]()
                     })
                     
                     break        // Really Simple Syndication Feed Model
-                case let .json(feed):
+                case .json(_):
                     break       // JSON Feed Model
                 }
                 
