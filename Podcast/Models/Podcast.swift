@@ -19,6 +19,7 @@ struct Result:Codable {
     var trackName: String?
     var artistName: String?
     var artworkUrl600: String?
+     var artworkUrl100: String?
     var trackCount: Int?
     var feedUrlSting: String?
 

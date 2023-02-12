@@ -17,4 +17,8 @@ extension String {
         // swiftlint:disable:next force_unwrapping
         addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
     }
+    
+    func replaceSpacesWithPlus(line:String) -> String{
+        return line.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+    }
 }

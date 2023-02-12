@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemTableViewCell: UITableViewCell {
+class EpisodeTableViewCell: UITableViewCell {
     let identifier = "EpisodeTableViewCell"
     var episode: Episode!{
         didSet{
@@ -16,8 +16,8 @@ class ItemTableViewCell: UITableViewCell {
            //        cell.contentView.layer.masksToBounds = true
                    episodeImageView.layer.cornerRadius = 30
                   episodeImageView.layer.masksToBounds = true
-           // title.text = episode.title
-                //  episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
+    
+            episodeImageView.sd_setImage(with: URL(string: self.episode?.imageUrl ?? ""))
                    
                    let dateFormatter = DateFormatter()
                    dateFormatter.dateFormat = "MMM dd, yyyy"

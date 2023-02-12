@@ -18,21 +18,41 @@ class PodcastsSearchController:UITableViewController{
     }
     
     func  setupTableView(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let nib = UINib(nibName: PodcastTableViewCell().identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        DispatchQueue.main.async { [weak self] in
+ 
+            let vc = EpisodesTableViewController()
+            vc.searchPodcast = self?.podcasts[indexPath.row]
+            self?.navigationController?.pushViewController(vc, animated: true)
+         
+            
+        }
     }
     
     func setupSearchBar(){
+        
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.title = "Search"
+        
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? PodcastTableViewCell
        
-        cell.textLabel?.text = podcasts[indexPath.row].trackName
-        return cell
+        cell?.podcast = podcasts[indexPath.row]
+        return cell ?? UITableViewCell()
     }
      
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +72,9 @@ class PodcastsSearchController:UITableViewController{
 
 extension PodcastsSearchController :UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       let url = "https://itunes.apple.com/search?term=\(searchText)"
+        let searchTerm = searchText.replacingOccurrences(of: " ", with: "+")
+        
+        let url = "https://itunes.apple.com/search?term=\(searchTerm)&entity=podcast"
         AF.request(url).responseData { (responseData) in
             if let error = responseData.error{
                 print(error)

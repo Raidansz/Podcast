@@ -10,8 +10,8 @@ import SDWebImage
 import FeedKit
 class EpisodesTableViewController: UITableViewController {
 var episodes = [Episode]()
-    
-    var podcast: Feed? {
+//    var mirror = Mirror(reflecting: self?.podcasts[indexPath.row])
+    var podcast:Feed? {
         didSet{
             navigationItem.title = podcast?.title
             if let safeUrl = podcast?.url{
@@ -21,6 +21,18 @@ var episodes = [Episode]()
            
         }
     }
+    
+    var searchPodcast:Podcast? {
+        didSet{
+            navigationItem.title = searchPodcast?.trackName
+            if let safeUrl = searchPodcast?.feedUrlSting{
+                fetchEpisode(with: safeUrl)
+            }
+            
+           
+        }
+    }
+    
     private func  fetchEpisode(with url:String){
         DispatchQueue.global(qos: .default).async {
                 let parser = FeedParser(URL: URL(string: url)!)
@@ -89,7 +101,7 @@ var episodes = [Episode]()
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let nib = UINib(nibName: ItemTableViewCell().identifier, bundle: nil)
+        let nib = UINib(nibName: EpisodeTableViewCell().identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cell_Identifier)
         
     }
@@ -102,7 +114,7 @@ var episodes = [Episode]()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? ItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? EpisodeTableViewCell
        
         cell?.episode = episodes[indexPath.row]
         cell?.episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
@@ -123,7 +135,7 @@ var episodes = [Episode]()
         //UIApplication.shared.keyWindow
         let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as! PlayerDetailsView
         playerDetailsView.episode = episode
-        playerDetailsView.episodeImage.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
+        playerDetailsView.episodeImage.sd_setImage(with: URL(string: self.podcast?.image ?? self.searchPodcast?.artworkUrl600 ?? ""))
         playerDetailsView.frame = self.view.frame
         window?.addSubview(playerDetailsView)
         
