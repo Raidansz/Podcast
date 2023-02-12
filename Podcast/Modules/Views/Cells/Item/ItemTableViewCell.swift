@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EpisodeTableViewCell: UITableViewCell {
+class ItemTableViewCell: UITableViewCell {
     let identifier = "EpisodeTableViewCell"
     var episode: Episode!{
         didSet{

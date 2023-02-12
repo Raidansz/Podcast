@@ -14,14 +14,14 @@ struct Result:Codable {
     var feeds:[Feed] // Podcasts
 }
 
-//final class Podcast: NSObject, Decodable, NSCoding {
-//
-//    var trackName: String?
-//    var artistName: String?
-//    var artworkUrl600: String?
-//    var trackCount: Int?
-//    var feedUrlSting: String?
-//
+ struct Podcast: Decodable {
+
+    var trackName: String?
+    var artistName: String?
+    var artworkUrl600: String?
+    var trackCount: Int?
+    var feedUrlSting: String?
+
 //    func encode(with aCoder: NSCoder) {
 //        print("Trying to transform Podcast into Data")
 //        aCoder.encode(trackName ?? "", forKey: Keys.trackNameKey)
@@ -37,7 +37,7 @@ struct Result:Codable {
 //        artworkUrl600 = aDecoder.decodeObject(forKey: Keys.artworkKey) as? String
 //        feedUrlSting = aDecoder.decodeObject(forKey: Keys.feedKey) as? String
 //    }
-//}
+}
 
 
 // Actual array of podcasts

@@ -21,9 +21,9 @@ extension CustomTabBarItem {
             return UINavigationController(rootViewController: HomeViewController())
     
         case .search:
-            return UINavigationController(rootViewController: ViewController(item: .search))
+            return UINavigationController(rootViewController: PodcastsSearchController())
         case .favorite:
-            return UINavigationController(rootViewController: PlayViewController())
+            return UINavigationController(rootViewController: UIViewController())
         }
         
         }

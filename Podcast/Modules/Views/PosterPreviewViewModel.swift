@@ -11,8 +11,4 @@ struct PosterPreviewViewModel{
     
     let feed:Feed
     
-    
-    
-    
-    
 }

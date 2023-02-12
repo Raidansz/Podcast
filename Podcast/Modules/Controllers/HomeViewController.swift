@@ -65,13 +65,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     }
     
    
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if(segue.identifier == Constants.takeMeToPodcast){
-              let vc = segue.destination as! EpisodesViewController
-             
-               vc.feed = feed
-           }
-       }
+     
 
     
   

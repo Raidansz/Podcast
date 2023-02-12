@@ -22,10 +22,6 @@ var episodes = [Episode]()
         }
     }
     private func  fetchEpisode(with url:String){
-        
-      
-            
-
         DispatchQueue.global(qos: .default).async {
                 let parser = FeedParser(URL: URL(string: url)!)
 
@@ -93,7 +89,7 @@ var episodes = [Episode]()
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let nib = UINib(nibName: EpisodeTableViewCell().identifier, bundle: nil)
+        let nib = UINib(nibName: ItemTableViewCell().identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: Constants.cell_Identifier)
         
     }
@@ -106,7 +102,7 @@ var episodes = [Episode]()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? EpisodeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? ItemTableViewCell
        
         cell?.episode = episodes[indexPath.row]
         cell?.episodeImageView.sd_setImage(with: URL(string: self.podcast?.image ?? ""))
