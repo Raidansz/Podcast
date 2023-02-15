@@ -21,7 +21,7 @@ struct Result:Codable {
     var artworkUrl600: String?
      var artworkUrl100: String?
     var trackCount: Int?
-    var feedUrlSting: String?
+    var feedUrl: String?
 
 //    func encode(with aCoder: NSCoder) {
 //        print("Trying to transform Podcast into Data")

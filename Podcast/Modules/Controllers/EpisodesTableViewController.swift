@@ -22,12 +22,16 @@ var episodes = [Episode]()
         }
     }
     
+    // if we jump from the search controller
     var searchPodcast:Podcast? {
         didSet{
             navigationItem.title = searchPodcast?.trackName
-            if let safeUrl = searchPodcast?.feedUrlSting{
-                fetchEpisode(with: safeUrl)
+            
+            if let safeUrl = searchPodcast?.feedUrl{
+              fetchEpisode(with: safeUrl)
+               
             }
+            
             
            
         }
@@ -42,8 +46,10 @@ var episodes = [Episode]()
                     case let .success(feed):
                         print("Successfully parse feed:", feed)
                         guard let rssFeed = feed.rssFeed else { return }
+                        print("Heelooo raidan")
                         let episodes = rssFeed.toEpisodes()
                         self.episodes = episodes
+                       
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }

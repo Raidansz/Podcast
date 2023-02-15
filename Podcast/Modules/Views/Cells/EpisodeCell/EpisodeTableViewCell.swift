@@ -25,6 +25,7 @@ class EpisodeTableViewCell: UITableViewCell {
             title.text = episode.title
            
             eDescription.text = episode.description.description
+            eDescription.numberOfLines = 2
         }
     }
     

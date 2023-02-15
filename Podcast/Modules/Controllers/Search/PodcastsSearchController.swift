@@ -29,6 +29,7 @@ class PodcastsSearchController:UITableViewController{
  
             let vc = EpisodesTableViewController()
             vc.searchPodcast = self?.podcasts[indexPath.row]
+           
             self?.navigationController?.pushViewController(vc, animated: true)
          
             
