@@ -6,4 +6,4 @@ I created this podcast app to apply what I had learned in Swift and to make a fa
 
 The app should be hooked up to Firebase to provide access from all devices. I open-sourced this app and my ideas so that many people can benefit and build a good community.
 
- I'm open to collaboration; you can contact me at [Raidancia0@gmail.com](mailto: Raidancia0@gmail.com).
+For collaboration; you can contact me at [Raidancia0@gmail.com](mailto: Raidancia0@gmail.com).
