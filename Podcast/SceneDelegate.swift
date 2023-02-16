@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigation?.setViewControllers([CustomTabBarController()], animated: true)
         window?.rootViewController = UINavigationController(rootViewController: CustomTabBarController())
         window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .dark
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

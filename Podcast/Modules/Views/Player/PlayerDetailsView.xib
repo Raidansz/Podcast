@@ -163,6 +163,7 @@
                 <constraint firstItem="A3F-C5-4nV" firstAttribute="bottom" secondItem="OMW-Nh-60u" secondAttribute="bottom" constant="24" id="zlF-g2-syt"/>
             </constraints>
             <connections>
+                <outlet property="authorLabel" destination="RCf-PH-8UI" id="HLp-YR-YyA"/>
                 <outlet property="episodeImage" destination="L2L-yu-hjU" id="Af1-Ji-HrB"/>
                 <outlet property="episodeLabel" destination="KQy-ec-DUo" id="PgW-Gb-404"/>
             </connections>

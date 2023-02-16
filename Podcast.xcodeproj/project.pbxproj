@@ -17,6 +17,8 @@
 		AA04023929990FBD007ECD54 /* PodcastsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */; };
 		AA040247299931DC007ECD54 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */; };
 		AA04024929993208007ECD54 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04024829993208007ECD54 /* PodcastTableViewCell.swift */; };
+		AA3FB93E299E29F50073FE5E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93D299E29F50073FE5E /* SearchResult.swift */; };
+		AA3FB940299E2A0F0073FE5E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93F299E2A0F0073FE5E /* Feed.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
 		AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813F29882458002967DD /* EpisodesTableViewController.swift */; };
 		AA628143298836DA002967DD /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA628141298836DA002967DD /* EpisodeTableViewCell.swift */; };
@@ -62,6 +64,8 @@
 		AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchController.swift; sourceTree = "<group>"; };
 		AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		AA04024829993208007ECD54 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		AA3FB93D299E29F50073FE5E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		AA3FB93F299E2A0F0073FE5E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AA62813F29882458002967DD /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		AA628141298836DA002967DD /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 			children = (
 				AA77108B292066C9009FDBAA /* Podcast.swift */,
 				AA04022A29983912007ECD54 /* Episode.swift */,
+				AA3FB93D299E29F50073FE5E /* SearchResult.swift */,
+				AA3FB93F299E2A0F0073FE5E /* Feed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,7 +449,9 @@
 			files = (
 				AA628143298836DA002967DD /* EpisodeTableViewCell.swift in Sources */,
 				AAD99789297EF3B4006DCC9E /* CustomTabBarItem.swift in Sources */,
+				AA3FB93E299E29F50073FE5E /* SearchResult.swift in Sources */,
 				AAD997B32980A498006DCC9E /* UIView+Extensions.swift in Sources */,
+				AA3FB940299E2A0F0073FE5E /* Feed.swift in Sources */,
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
@@ -631,7 +639,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = raidan.Podcast;
+				PRODUCT_BUNDLE_IDENTIFIER = raidan.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -659,7 +667,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = raidan.Podcast;
+				PRODUCT_BUNDLE_IDENTIFIER = raidan.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

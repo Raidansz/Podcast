@@ -7,12 +7,7 @@
 
 import Foundation
 
-// Raw output
-struct Result:Codable {
 
-    var count:Int
-    var feeds:[Feed] // Podcasts
-}
 
  struct Podcast: Decodable {
 
@@ -41,16 +36,7 @@ struct Result:Codable {
 }
 
 
-// Actual array of podcasts
-struct Feed:Codable{
-    var title:String
-    var id:Int
-   var url:String
-   var description:String
-  var author:String
-   var image:String
-   var artwork:String
-}
+
 
 
 

@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.definesPresentationContext = true
         view.addSubview(homeFeedTable)
@@ -58,18 +59,12 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
             let vc = EpisodesTableViewController()
             vc.podcast = self?.feed
             self?.navigationController?.pushViewController(vc, animated: true)
-          //  self?.present(vc, animated: true)
-          //  self?.performSegue(withIdentifier: Constants.takeMeToPodcast, sender: self)
-            print("pressemd")
+         
+            
         }
     }
     
    
-     
-
-    
-  
-    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {

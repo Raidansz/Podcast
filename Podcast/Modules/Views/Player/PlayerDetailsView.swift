@@ -19,7 +19,7 @@ class PlayerDetailsView:UIView{
             let sound = episode.streamUrl
             if let url = URL(string: sound) {
                 self.player = AVPlayer(url: url)
-                
+                authorLabel.text = episode.author
             }
             
         }
@@ -39,6 +39,7 @@ class PlayerDetailsView:UIView{
         }
     }
     
+    @IBOutlet weak var authorLabel: UILabel!
     
     @IBAction func handleDismiss(_ sender: Any) {
         self.removeFromSuperview()

@@ -56,13 +56,6 @@ class PodcastsSearchController:UITableViewController{
         return cell ?? UITableViewCell()
     }
      
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//
-//        cell.textLabel?.text = podcasts[index]
-//        cell.imageView?.image = UIImage(systemName: "square.and.arrow.down.fill")
-//        return cell
-//    }
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
@@ -93,30 +86,4 @@ extension PodcastsSearchController :UISearchBarDelegate{
         }
    }
     
-//    private func  fetchEpisode(with url:String){
-//        DispatchQueue.global(qos: .default).async {
-//                let parser = FeedParser(URL: URL(string: url)!)
-//
-//                parser.parseAsync { result in
-//                    switch result {
-//                    case let .success(feed):
-//                        print("Successfully parse feed:", feed)
-//                        guard let rssFeed = feed.rssFeed else { return }
-//                        let episodes = rssFeed.toEpisodes()
-//                        self.episodes = episodes
-//                        DispatchQueue.main.async {
-//                            self.tableView.reloadData()
-//                        }
-//                    case let .failure(parserError):
-//                        print("Failed to parse XML feed:", parserError)
-//                    }
-//                }
-//            }
-//        
-//    }
-
-    
-    struct SearchResults:Decodable{
-        let results:[Podcast]
-    }
 }
