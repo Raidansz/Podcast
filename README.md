@@ -7,6 +7,16 @@ I created this podcast app to apply what I had learned in Swift and to make a fa
 The app should be hooked up to Firebase to provide access from all devices. I open-sourced this app and my ideas so that many people can benefit and build a good community.
 
 For collaboration; you can contact me at [Raidancia0@gmail.com].
+
+
+
+
+
+
+
+
+
+
 <img width="357" alt="Screenshot 2023-02-16 at AM 11 17 13" src="https://user-images.githubusercontent.com/92235772/219337353-a8b09448-09a7-48b7-b5a3-24e61625aba1.png">
 <img width="374" alt="Screenshot 2023-02-16 at AM 11 17 27" src="https://user-images.githubusercontent.com/92235772/219337371-8455ca19-33c5-472b-b6a3-158c34d887a8.png">
 <img width="360" alt="Screenshot 2023-02-16 at AM 11 17 47" src="https://user-images.githubusercontent.com/92235772/219337382-be662f0f-c1e5-4d4a-b9b0-f50605644e94.png">
