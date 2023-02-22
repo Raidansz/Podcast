@@ -57,20 +57,35 @@ class PlayerDetailsView:UIView{
         if player.timeControlStatus == .paused{
             player.play()
             playPauseButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            imageIfPlayed()
         }else{
             player.pause()
-           
             playPauseButtonOutlet.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            imageIfPaused()
         }
        
        
     }
     
+    func imageIfPlayed(){
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1) {
+            self.episodeImage.transform = .identity
+        }
+    }
+    
+    
+    func imageIfPaused(){
+        let scale:CGFloat = 0.7
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1) {
+            self.episodeImage.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+    }
     
     
     @IBOutlet weak var episodeImage: UIImageView!{
         didSet{
-        
+            episodeImage.layer.cornerRadius = 10
+            episodeImage.layer.masksToBounds = true
         }
     }
     
