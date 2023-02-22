@@ -109,9 +109,6 @@
                                     <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                     </buttonConfiguration>
-                                    <connections>
-                                        <action selector="playPauseButton:" destination="oHn-VP-fgY" eventType="touchUpInside" id="JOM-gM-sT1"/>
-                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hME-ft-tvZ">
                                     <rect key="frame" x="188" y="0.0" width="50" height="210"/>
@@ -166,17 +163,18 @@
                 <outlet property="authorLabel" destination="RCf-PH-8UI" id="HLp-YR-YyA"/>
                 <outlet property="episodeImage" destination="L2L-yu-hjU" id="Af1-Ji-HrB"/>
                 <outlet property="episodeLabel" destination="KQy-ec-DUo" id="PgW-Gb-404"/>
+                <outlet property="playPauseButtonOutlet" destination="Ly5-qC-uKm" id="g7n-l6-3xi"/>
             </connections>
             <point key="canvasLocation" x="204" y="26"/>
         </view>
     </objects>
     <resources>
         <image name="a" width="824" height="890"/>
-        <image name="gobackward.15" catalog="system" width="119" height="128"/>
-        <image name="goforward.15" catalog="system" width="119" height="128"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
-        <image name="volume.3.fill" catalog="system" width="128" height="84"/>
-        <image name="volume.fill" catalog="system" width="128" height="125"/>
+        <image name="gobackward.15" catalog="system" width="32" height="32"/>
+        <image name="goforward.15" catalog="system" width="32" height="32"/>
+        <image name="play.fill" catalog="system" width="32" height="32"/>
+        <image name="volume.3.fill" catalog="system" width="32" height="32"/>
+        <image name="volume.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
