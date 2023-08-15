@@ -95,6 +95,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="gobackward.15" catalog="system"/>
+                                    <connections>
+                                        <action selector="Backwards:" destination="oHn-VP-fgY" eventType="touchUpInside" id="egW-76-9WM"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgZ-Z5-aEW">
                                     <rect key="frame" x="94" y="0.0" width="50" height="210"/>
@@ -121,6 +124,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="goforward.15" catalog="system"/>
+                                    <connections>
+                                        <action selector="forward:" destination="oHn-VP-fgY" eventType="touchUpInside" id="U4w-yn-L4M"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPW-aD-NGS">
                                     <rect key="frame" x="282" y="0.0" width="63" height="210"/>
@@ -170,11 +176,11 @@
     </objects>
     <resources>
         <image name="a" width="824" height="890"/>
-        <image name="gobackward.15" catalog="system" width="32" height="32"/>
-        <image name="goforward.15" catalog="system" width="32" height="32"/>
-        <image name="play.fill" catalog="system" width="32" height="32"/>
-        <image name="volume.3.fill" catalog="system" width="32" height="32"/>
-        <image name="volume.fill" catalog="system" width="32" height="32"/>
+        <image name="gobackward.15" catalog="system" width="119" height="128"/>
+        <image name="goforward.15" catalog="system" width="119" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="volume.3.fill" catalog="system" width="128" height="84"/>
+        <image name="volume.fill" catalog="system" width="128" height="125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

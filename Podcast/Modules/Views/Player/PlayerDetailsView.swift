@@ -23,11 +23,7 @@ class PlayerDetailsView:UIView{
         didSet{
             episodeLabel.text = episode.title
             playEpisode()
-            //            let sound = episode.streamUrl
-//            if let url = URL(string: sound) {
-//                self.player = AVPlayer(url: url)
-//                authorLabel.text = episode.author
-//            }
+           
             
         }
     }
@@ -156,6 +152,12 @@ class PlayerDetailsView:UIView{
        
     }
     
+    @IBAction func Backwards(_ sender: UIButton) {
+        PlayerManager.shared.seekBackward(seconds: 15)
+    }
     
+    @IBAction func forward(_ sender: UIButton) {
+        PlayerManager.shared.seekForward(seconds: 15)
+    }
     
 }

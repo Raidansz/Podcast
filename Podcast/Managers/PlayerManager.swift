@@ -26,4 +26,23 @@ class PlayerManager {
         basePlayer = AVPlayer(url: url)
         basePlayer?.play()
     }
+    
+    
+    func seekForward(seconds: Double) {
+           if let player = basePlayer {
+               let currentTime = CMTimeGetSeconds(player.currentTime())
+               let newTime = currentTime + seconds
+               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
+               player.seek(to: timeToSeek)
+           }
+       }
+
+       func seekBackward(seconds: Double) {
+           if let player = basePlayer {
+               let currentTime = CMTimeGetSeconds(player.currentTime())
+               let newTime = max(currentTime - seconds, 0)
+               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
+               player.seek(to: timeToSeek)
+           }
+       }
 }
