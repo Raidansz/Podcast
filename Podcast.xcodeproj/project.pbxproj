@@ -25,6 +25,7 @@
 		AA628144298836DA002967DD /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA628142298836DA002967DD /* EpisodeTableViewCell.xib */; };
 		AA62814629884664002967DD /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA62814529884664002967DD /* PlayerDetailsView.xib */; };
 		AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA628147298849CE002967DD /* PlayerDetailsView.swift */; };
+		AA73B4CF2A8BFE8D00F45B9A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73B4CE2A8BFE8D00F45B9A /* PlayerManager.swift */; };
 		AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771070292063CF009FDBAA /* AppDelegate.swift */; };
 		AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771072292063CF009FDBAA /* SceneDelegate.swift */; };
 		AA771075292063CF009FDBAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771074292063CF009FDBAA /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 		AA628142298836DA002967DD /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		AA62814529884664002967DD /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
 		AA628147298849CE002967DD /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		AA73B4CE2A8BFE8D00F45B9A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		AA77106D292063CF009FDBAA /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA771070292063CF009FDBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA771072292063CF009FDBAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				AA77108929206661009FDBAA /* APICaller.swift */,
 				AAD99760297DC040006DCC9E /* XmlManager.swift */,
+				AA73B4CE2A8BFE8D00F45B9A /* PlayerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */,
 				AAD997B52980A4DD006DCC9E /* UILabel+Extensions.swift in Sources */,
 				AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */,
+				AA73B4CF2A8BFE8D00F45B9A /* PlayerManager.swift in Sources */,
 				AAD997B12980A46E006DCC9E /* UiStackView+Extensions.swift in Sources */,
 				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,

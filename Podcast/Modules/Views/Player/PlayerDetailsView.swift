@@ -9,11 +9,13 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 class PlayerDetailsView:UIView{
-    var player: AVPlayer = {
-        let player = AVPlayer()
-        player.automaticallyWaitsToMinimizeStalling = false
-        return player
-    }()
+    var currentEpisodePlayer: AVPlayer?
+    
+//    var player: AVPlayer = {
+//        let player = AVPlayer()
+//        player.automaticallyWaitsToMinimizeStalling = false
+//        return player
+//    }()
     
     
     
@@ -35,15 +37,22 @@ class PlayerDetailsView:UIView{
         }
     }
     
-    func playEpisode(){
-        if let url = URL(string: episode.streamUrl){
-           
-            player = AVPlayer(url: url)
-            player.play()
-           enlargeEpisodeImage()
+    
+    func playEpisode() {
+      
+       
+
+            if let url = URL(string: episode.streamUrl) {
+                PlayerManager.shared.playEpisode(url: url)
+                
+            
+                enlargeEpisodeImage()
+                
+            }
         }
-        
-    }
+    
+    
+   
 
     
     @IBOutlet weak var playPauseButtonOutlet: UIButton!{
@@ -54,19 +63,22 @@ class PlayerDetailsView:UIView{
         }
     }
     
-    @objc func handlePlayPause(){
-        if player.timeControlStatus == .paused{
-            player.play()
-            playPauseButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-        enlargeEpisodeImage()
-        }else{
-            player.pause()
-            playPauseButtonOutlet.setImage(UIImage(systemName: "play.fill"), for: .normal)
-            shrinkEpisodeImage()
+    
+    @objc func handlePlayPause() {
+        
+            if  PlayerManager.shared.basePlayer?.timeControlStatus == .paused {
+                PlayerManager.shared.basePlayer?.play()
+                playPauseButtonOutlet.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                enlargeEpisodeImage()
+            } else {
+                PlayerManager.shared.basePlayer?.pause()
+                playPauseButtonOutlet.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                shrinkEpisodeImage()
+            }
         }
-       
-       
-    }
+    
+
+    
     
     func enlargeEpisodeImage(){
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1) {
@@ -97,13 +109,13 @@ class PlayerDetailsView:UIView{
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
         commandCenter.playCommand.addTarget { _ in
-            self.player.play()
+            PlayerManager.shared.basePlayer?.play()
             return .success
         }
         
         commandCenter.pauseCommand.isEnabled = true
         commandCenter.pauseCommand.addTarget { _ in
-            self.player.pause()
+            PlayerManager.shared.basePlayer?.pause()
             return .success
         }
         
@@ -122,29 +134,8 @@ class PlayerDetailsView:UIView{
         super.awakeFromNib()
         setupRemoteControl()
         setupAudioSession()
-        //TODO
-//       let time = CMTimeMake(value: 1, timescale: 3)
-//        let times = [NSValue(time: time)]
-////        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
-////            self.enlargeEpisodeImage()
-////            print("started plattitienginag")
-//       // }
-//
-//
-//            // Set initial time to zero
-//
-//            // Divide the asset's duration into quarters.
-//
-//
-//            // Build boundary times at 25%, 50%, 75%, 100%
-//
-//
-//            // Add time observer. Observe boundary time changes on the main queue.
-//            player.addBoundaryTimeObserver(forTimes: times,
-//                                                               queue: .main) { [weak self] in
-//                // Update UI
-//                self?.enlargeEpisodeImage()
-//            }
+       
+
     }
     
     @IBOutlet weak var episodeImage: UIImageView!{
