@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 class PlayerDetailsView:UIView{
     var player: AVPlayer = {
         let player = AVPlayer()
@@ -80,8 +81,47 @@ class PlayerDetailsView:UIView{
             self.episodeImage.transform = CGAffineTransform(scaleX: scale, y: scale)
         }
     }
+    
+    private func setupAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let sessionError {
+            print("Failed to activate session", sessionError.localizedDescription)
+        }
+    }
+
+    private func setupRemoteControl() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { _ in
+            self.player.play()
+            return .success
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { _ in
+            self.player.pause()
+            return .success
+        }
+        
+        //TODO: Set up other commands like skip forward, skip backward, etc.
+        
+        // Update the now playing info using MPNowPlayingInfoCenter
+        var nowPlayingInfo: [String: Any] = [:]
+        nowPlayingInfo[MPMediaItemPropertyTitle] =  "null"
+        // other relevant metadata
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupRemoteControl()
+        setupAudioSession()
         //TODO
 //       let time = CMTimeMake(value: 1, timescale: 3)
 //        let times = [NSValue(time: time)]
