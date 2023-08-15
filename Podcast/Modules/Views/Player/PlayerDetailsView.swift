@@ -133,8 +133,58 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         setupRemoteControl()
         setupAudioSession()
         PlayerManager.shared.delegate = self
+        progressBar.isUserInteractionEnabled = true
+        
+        // Add tap gesture recognizer
+               let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+               progressBar.addGestureRecognizer(tapGesture)
+               
+               // Add pan gesture recognizer
+               let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+               progressBar.addGestureRecognizer(panGesture)
 
     }
+    
+    @objc func handleTapGesture(_ gesture: UITapGestureRecognizer) {
+        guard let duration = PlayerManager.shared.currentDuration else {
+            return
+        }
+        
+        let tapPoint = gesture.location(in: progressBar)
+        let progress = max(0, min(1, Float(tapPoint.x / progressBar.bounds.width)))
+        let seekTime = Double(progress) * duration
+        
+        PlayerManager.shared.seekForward(seconds: seekTime)
+    }
+
+    
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        guard let duration = PlayerManager.shared.currentDuration else {
+            return
+        }
+        
+        switch gesture.state {
+        case .began:
+            // Handle gesture began state (e.g., pause playback)
+            break
+        case .changed:
+            let translation = gesture.translation(in: progressBar)
+            let xOffset = translation.x
+            let totalWidth = progressBar.bounds.width
+            let progress = max(0, min(1, Float(xOffset / totalWidth)))
+            let seekTime = Double(progress) * duration
+            PlayerManager.shared.seekForward(seconds: seekTime)
+        case .ended:
+            // Handle gesture ended state (e.g., resume playback)
+            break
+        default:
+            break
+        }
+    }
+
+    
+    
+    
     
     @IBOutlet weak var episodeImage: UIImageView!{
         didSet{

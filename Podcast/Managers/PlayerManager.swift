@@ -18,7 +18,7 @@ class PlayerManager {
     weak var delegate: PlayerManagerDelegate?
     static let shared = PlayerManager()
     private var timeObserver: Any?
-  
+    var currentDuration: Double?
     var basePlayer: AVPlayer? = {
             let player = AVPlayer()
             player.automaticallyWaitsToMinimizeStalling = false
@@ -39,6 +39,12 @@ class PlayerManager {
                        self?.updatePlaybackTime(currentTime: currentTime, duration: duration)
                    }
                }
+        
+
+        currentDuration = basePlayer?.currentItem?.duration.seconds
+
+               
+           
         
     }
     
