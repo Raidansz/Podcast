@@ -19,12 +19,18 @@ class PlayerManager {
     static let shared = PlayerManager()
     private var timeObserver: Any?
     var currentDuration: Double?
+    var minimumVolume: Float = 0.0
     var basePlayer: AVPlayer? = {
             let player = AVPlayer()
             player.automaticallyWaitsToMinimizeStalling = false
             return player
        }()
 
+    func adjustVolume(withMinimum volume: Float) {
+            let adjustedVolume = max(volume, minimumVolume)
+            basePlayer?.volume = adjustedVolume
+        }
+    
     func playEpisode(url: URL) {
         if let player = basePlayer {
             player.pause()

@@ -17,7 +17,8 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
     var currentEpisodePlayer: AVPlayer?
     
 
- 
+    @IBOutlet weak var minVolumeSlider: UISlider!
+    
     @IBOutlet weak var progressBar: UIProgressView!
     
     
@@ -126,12 +127,18 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 
-    
+    func setupInitialVolume() {
+           // Set up audio playback and initial minimum volume level
+           let initialMinVolume = minVolumeSlider.value
+           PlayerManager.shared.adjustVolume(withMinimum: initialMinVolume)
+           // ... (other setup code)
+       }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupRemoteControl()
         setupAudioSession()
+        setupInitialVolume()
         PlayerManager.shared.delegate = self
         progressBar.isUserInteractionEnabled = true
         
@@ -213,4 +220,8 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         PlayerManager.shared.seekForward(seconds: 15)
     }
     
+    @IBAction func minVolumeSliderValueChanged(_ sender: UISlider) {
+        let newMinVolume = sender.value
+                PlayerManager.shared.adjustVolume(withMinimum: newMinVolume)
+    }
 }

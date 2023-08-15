@@ -145,6 +145,9 @@
                                 </imageView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DvG-tQ-iQD">
                                     <rect key="frame" x="32" y="0.0" width="281" height="25"/>
+                                    <connections>
+                                        <action selector="minVolumeSliderValueChanged:" destination="oHn-VP-fgY" eventType="valueChanged" id="1lE-P8-AAO"/>
+                                    </connections>
                                 </slider>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volume.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-HL-fAK">
                                     <rect key="frame" x="311" y="1" width="34" height="22"/>
@@ -169,6 +172,7 @@
                 <outlet property="authorLabel" destination="RCf-PH-8UI" id="HLp-YR-YyA"/>
                 <outlet property="episodeImage" destination="L2L-yu-hjU" id="Af1-Ji-HrB"/>
                 <outlet property="episodeLabel" destination="KQy-ec-DUo" id="PgW-Gb-404"/>
+                <outlet property="minVolumeSlider" destination="DvG-tQ-iQD" id="GQz-eg-963"/>
                 <outlet property="playPauseButtonOutlet" destination="Ly5-qC-uKm" id="g7n-l6-3xi"/>
                 <outlet property="progressBar" destination="FJv-fs-ZvJ" id="jed-7r-84Y"/>
             </connections>
