@@ -205,9 +205,11 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
     @IBOutlet weak var authorLabel: UILabel!
     
     @IBAction func handleDismiss(_ sender: Any) {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1) {
-            self.removeFromSuperview()
-        }
+        UIView.animate(withDuration: 0.7, animations: { //  the duration to slow down the animation
+               self.frame.origin.y += self.frame.size.height // Slide down
+           }) { _ in
+               self.removeFromSuperview()
+           }
        
     }
    
