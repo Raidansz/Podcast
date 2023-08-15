@@ -39,7 +39,7 @@ class PlayerDetailsView:UIView{
            
             player = AVPlayer(url: url)
             player.play()
-           
+           enlargeEpisodeImage()
         }
         
     }
