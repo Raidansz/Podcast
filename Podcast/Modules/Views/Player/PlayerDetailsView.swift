@@ -8,15 +8,17 @@
 import UIKit
 import AVFoundation
 import MediaPlayer
-class PlayerDetailsView:UIView{
+class PlayerDetailsView:UIView, PlayerManagerDelegate{
+    func playbackTimeDidChange(currentTime: Double, duration: Double) {
+        let progress = Float(currentTime / duration)
+               progressBar.setProgress(progress, animated: true)
+    }
+    
     var currentEpisodePlayer: AVPlayer?
     
-//    var player: AVPlayer = {
-//        let player = AVPlayer()
-//        player.automaticallyWaitsToMinimizeStalling = false
-//        return player
-//    }()
-    
+
+ 
+    @IBOutlet weak var progressBar: UIProgressView!
     
     
     var episode:Episode!{
@@ -124,13 +126,13 @@ class PlayerDetailsView:UIView{
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupRemoteControl()
         setupAudioSession()
-       
+        PlayerManager.shared.delegate = self
 
     }
     
@@ -151,6 +153,7 @@ class PlayerDetailsView:UIView{
         }
        
     }
+   
     
     @IBAction func Backwards(_ sender: UIButton) {
         PlayerManager.shared.seekBackward(seconds: 15)

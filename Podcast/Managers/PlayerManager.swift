@@ -8,9 +8,16 @@
 import Foundation
 import AVFoundation
 
+
+protocol PlayerManagerDelegate: AnyObject {
+    func playbackTimeDidChange(currentTime: Double, duration: Double)
+}
+
+
 class PlayerManager {
+    weak var delegate: PlayerManagerDelegate?
     static let shared = PlayerManager()
-    
+    private var timeObserver: Any?
   
     var basePlayer: AVPlayer? = {
             let player = AVPlayer()
@@ -25,7 +32,19 @@ class PlayerManager {
         
         basePlayer = AVPlayer(url: url)
         basePlayer?.play()
+        
+        timeObserver = basePlayer?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
+                   let currentTime = CMTimeGetSeconds(time)
+                   if let duration = self?.basePlayer?.currentItem?.duration.seconds {
+                       self?.updatePlaybackTime(currentTime: currentTime, duration: duration)
+                   }
+               }
+        
     }
+    
+    private func updatePlaybackTime(currentTime: Double, duration: Double) {
+           delegate?.playbackTimeDidChange(currentTime: currentTime, duration: duration)
+       }
     
     
     func seekForward(seconds: Double) {
