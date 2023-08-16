@@ -8,8 +8,8 @@
 import UIKit
 
 enum CustomTabBarItem: String, CaseIterable {
-    case play
     case profile
+    case play
     case search
     case favorite
 }
@@ -21,6 +21,10 @@ extension CustomTabBarItem {
         
         
         switch self {
+        
+            
+        case .profile:
+            return UINavigationController(rootViewController: HomeViewController())
         case .play:
             let window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first
         
@@ -31,10 +35,6 @@ extension CustomTabBarItem {
             
             return UINavigationController(rootViewController: viewC)
                     
-            
-        case .profile:
-            return UINavigationController(rootViewController: HomeViewController())
-    
         case .search:
             return UINavigationController(rootViewController: PodcastsSearchController())
         case .favorite:

@@ -46,7 +46,7 @@ class CustomTabBarController: UITabBarController {
         customTabBar.translatesAutoresizingMaskIntoConstraints = false
         customTabBar.addShadow()
         
-        selectedIndex = 0
+        selectedIndex = 1
         let controllers = CustomTabBarItem.allCases.map { $0.viewController }
         setViewControllers(controllers, animated: true)
     }

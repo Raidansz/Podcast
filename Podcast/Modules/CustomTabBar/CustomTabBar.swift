@@ -87,7 +87,7 @@ final class CustomTabBar: UIStackView {
             .when(.recognized)
             .bind { [weak self] _ in
                 guard let self = self else { return }
-                self.profileItem.animateClick {
+                self.playItem.animateClick {
                     self.selectItem(index: self.playItem.index)
                 }
             }
