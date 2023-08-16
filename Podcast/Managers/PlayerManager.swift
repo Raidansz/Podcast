@@ -43,6 +43,7 @@ class PlayerManager {
                    let currentTime = CMTimeGetSeconds(time)
                    if let duration = self?.basePlayer?.currentItem?.duration.seconds {
                        self?.updatePlaybackTime(currentTime: currentTime, duration: duration)
+                       
                    }
                }
         

@@ -26,7 +26,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         didSet{
             episodeLabel.text = episode.title
             playEpisode()
-           
+            authorLabel.text = episode.author
             
         }
     }
@@ -140,7 +140,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         setupAudioSession()
         setupInitialVolume()
         PlayerManager.shared.delegate = self
-        progressBar.isUserInteractionEnabled = true
+       // progressBar.isUserInteractionEnabled = true
         
         // Add tap gesture recognizer
                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
