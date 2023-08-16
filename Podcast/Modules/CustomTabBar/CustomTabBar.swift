@@ -14,11 +14,12 @@ final class CustomTabBar: UIStackView {
     
     var itemTapped: Observable<Int> { itemTappedSubject.asObservable() }
     
-    private lazy var customItemViews: [CustomItemView] = [profileItem, searchItem, favoriteItem]
+    private lazy var customItemViews: [CustomItemView] = [playItem,profileItem, searchItem, favoriteItem]
     
-    private let profileItem = CustomItemView(with: .profile, index: 0)
-    private let searchItem = CustomItemView(with: .search, index: 1)
-    private let favoriteItem = CustomItemView(with: .favorite, index: 2)
+    private let playItem = CustomItemView(with: .play, index: 0)
+    private let profileItem = CustomItemView(with: .profile, index: 1)
+    private let searchItem = CustomItemView(with: .search, index: 2)
+    private let favoriteItem = CustomItemView(with: .favorite, index: 3)
     
     private let itemTappedSubject = PublishSubject<Int>()
     private let disposeBag = DisposeBag()
@@ -32,7 +33,7 @@ final class CustomTabBar: UIStackView {
         
         setNeedsLayout()
         layoutIfNeeded()
-        selectItem(index: 0)
+        selectItem(index: 1)
         
        
     }
@@ -42,7 +43,7 @@ final class CustomTabBar: UIStackView {
     }
     
     private func setupHierarchy() {
-        addArrangedSubviews([profileItem, searchItem, favoriteItem])
+        addArrangedSubviews([playItem,profileItem, searchItem, favoriteItem])
     }
     public func hide (with degree:Float){
        
@@ -53,7 +54,7 @@ final class CustomTabBar: UIStackView {
             float = 0
         }
         backgroundColor = UIColor.white.withAlphaComponent(CGFloat(float))
-       removeArrangedSubviews([profileItem, searchItem, favoriteItem])
+       removeArrangedSubviews([playItem,profileItem, searchItem, favoriteItem])
         
         
         
@@ -82,6 +83,16 @@ final class CustomTabBar: UIStackView {
     //MARK: - Bindings
     
     private func bind() {
+        playItem.rx.tapGesture()
+            .when(.recognized)
+            .bind { [weak self] _ in
+                guard let self = self else { return }
+                self.profileItem.animateClick {
+                    self.selectItem(index: self.playItem.index)
+                }
+            }
+            .disposed(by: disposeBag)
+        
         profileItem.rx.tapGesture()
             .when(.recognized)
             .bind { [weak self] _ in

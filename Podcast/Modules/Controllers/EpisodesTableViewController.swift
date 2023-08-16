@@ -10,6 +10,7 @@ import SDWebImage
 import FeedKit
 class EpisodesTableViewController: UITableViewController {
 var episodes = [Episode]()
+ 
 //    var mirror = Mirror(reflecting: self?.podcasts[indexPath.row])
     var podcast:Feed? {
         didSet{
@@ -90,6 +91,8 @@ var episodes = [Episode]()
         playerDetailsView.frame = self.view.frame
         window?.addSubview(playerDetailsView)
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+               appDelegate.playerDetailsViewREF = playerDetailsView 
     }
 }
 
@@ -97,68 +100,25 @@ extension EpisodesTableViewController{
     
     private func  fetchEpisode(with url:String){
         DispatchQueue.global(qos: .default).async {
-                let parser = FeedParser(URL: URL(string: url)!)
-
-                parser.parseAsync { result in
-                    switch result {
-                    case let .success(feed):
-                        print("Successfully parse feed:", feed)
-                        guard let rssFeed = feed.rssFeed else { return }
-                       
-                        let episodes = rssFeed.toEpisodes()
-                        self.episodes = episodes
-                        print("the url for the image is \(episodes.first?.imageUrl)")
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    case let .failure(parserError):
-                        print("Failed to parse XML feed:", parserError)
+            let parser = FeedParser(URL: URL(string: url)!)
+            
+            parser.parseAsync { result in
+                switch result {
+                case let .success(feed):
+                    print("Successfully parse feed:", feed)
+                    guard let rssFeed = feed.rssFeed else { return }
+                    
+                    let episodes = rssFeed.toEpisodes()
+                    self.episodes = episodes
+                    print("the url for the image is \(episodes.first?.imageUrl)")
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
+                case let .failure(parserError):
+                    print("Failed to parse XML feed:", parserError)
                 }
             }
+        }
         
         
-      //  let parser = FeedParser(URL: URL(string: url )!)
-//        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
-//            switch result {
-//            case .success(let feed):
-//
-//                // Grab the parsed feed directly as an optional rss, atom or json feed object
-//
-//
-//                // Or alternatively...
-//                switch feed {
-//                case .atom(_):
-//                    break       // Atom Syndication Format Feed Model
-//                case let .rss(feed):
-//                    feed.items?.forEach({ (epi) in
-//
-//                        let episode = Episode(enclosure:epi.enclosure?.attributes?.url ?? "" , title: epi.title ?? "", pubDate: epi.pubDate ?? Date(), description: epi.description ?? "")
-//                        self.episodes.append(episode)
-//
-//                    })
-//
-//                    break        // Really Simple Syndication Feed Model
-//                case .json(_):
-//                    break       // JSON Feed Model
-//                }
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-        
-//        DispatchQueue.global(qos: .default).async{
-//            XmlManager.shared.doParse(path: url)
-//
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//       }
-//        }
-        
-    }
-    
-}
+    }}
