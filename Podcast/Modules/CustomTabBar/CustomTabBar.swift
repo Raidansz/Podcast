@@ -14,10 +14,11 @@ final class CustomTabBar: UIStackView {
     
     var itemTapped: Observable<Int> { itemTappedSubject.asObservable() }
     
-    private lazy var customItemViews: [CustomItemView] = [playItem,profileItem, searchItem, favoriteItem]
+    private lazy var customItemViews: [CustomItemView] = [profileItem,playItem, searchItem, favoriteItem]
     
-    private let playItem = CustomItemView(with: .play, index: 0)
-    private let profileItem = CustomItemView(with: .profile, index: 1)
+    
+    private let profileItem = CustomItemView(with: .profile, index: 0)
+    private let playItem = CustomItemView(with: .play, index: 1)
     private let searchItem = CustomItemView(with: .search, index: 2)
     private let favoriteItem = CustomItemView(with: .favorite, index: 3)
     
@@ -33,7 +34,7 @@ final class CustomTabBar: UIStackView {
         
         setNeedsLayout()
         layoutIfNeeded()
-        selectItem(index: 1)
+        selectItem(index: 0)
         
        
     }
@@ -43,7 +44,7 @@ final class CustomTabBar: UIStackView {
     }
     
     private func setupHierarchy() {
-        addArrangedSubviews([playItem,profileItem, searchItem, favoriteItem])
+        addArrangedSubviews([profileItem,playItem, searchItem, favoriteItem])
     }
     public func hide (with degree:Float){
        
@@ -54,7 +55,7 @@ final class CustomTabBar: UIStackView {
             float = 0
         }
         backgroundColor = UIColor.white.withAlphaComponent(CGFloat(float))
-       removeArrangedSubviews([playItem,profileItem, searchItem, favoriteItem])
+       removeArrangedSubviews([profileItem,playItem, searchItem, favoriteItem])
         
         
         

@@ -21,17 +21,32 @@ extension CustomTabBarItem {
         
         
         switch self {
-        
-            
+    
         case .profile:
             return UINavigationController(rootViewController: HomeViewController())
         case .play:
-            let window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first
+
         
+            let customView = appDelegate.playerDetailsViewREF
+            
+            if let safe =  customView {
+                print("goooood")
+            }else {
+                print("BAAAAAAAD")
+            }
             let viewC = UIViewController()
-            viewC.view = appDelegate.playerDetailsViewREF
-           
-            window?.addSubview(appDelegate.playerDetailsViewREF!)
+            viewC.view.backgroundColor = UIColor.green
+
+//
+//            // Set the frame to cover the entire screen
+//             customView.frame = UIScreen.main.bounds
+//
+//            // Add the custom view as a subview to the parent view controller's view
+//            if let customView = customView {
+//                viewC.view.addSubview(customView)
+//            }else{
+//                return UINavigationController(rootViewController: UIViewController())
+//            }
             
             return UINavigationController(rootViewController: viewC)
                     
