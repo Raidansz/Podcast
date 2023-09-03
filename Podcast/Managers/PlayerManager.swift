@@ -40,41 +40,69 @@ class PlayerManager {
         basePlayer?.play()
         
         timeObserver = basePlayer?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { [weak self] time in
-                   let currentTime = CMTimeGetSeconds(time)
-                   if let duration = self?.basePlayer?.currentItem?.duration.seconds {
-                       self?.updatePlaybackTime(currentTime: currentTime, duration: duration)
-                       
-                   }
-               }
-        
-
-        currentDuration = basePlayer?.currentItem?.duration.seconds
-
-               
-           
-        
+            let currentTime = CMTimeGetSeconds(time)
+            if let duration = self?.basePlayer?.currentItem?.duration.seconds, !duration.isNaN {
+                self?.updatePlaybackTime(currentTime: currentTime, duration: duration)
+                self?.currentDuration = duration // Set currentDuration
+            }
+        }
     }
+
+    
+    
     
     private func updatePlaybackTime(currentTime: Double, duration: Double) {
            delegate?.playbackTimeDidChange(currentTime: currentTime, duration: duration)
        }
     
     
+//    func seekForward(seconds: Double) {
+//           if let player = basePlayer {
+//               let currentTime = CMTimeGetSeconds(player.currentTime())
+//               let newTime = currentTime + seconds
+//               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
+//               player.seek(to: timeToSeek)
+//           }
+//       }
+    
     func seekForward(seconds: Double) {
-           if let player = basePlayer {
-               let currentTime = CMTimeGetSeconds(player.currentTime())
-               let newTime = currentTime + seconds
-               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
-               player.seek(to: timeToSeek)
-           }
-       }
+        if let player = basePlayer {
+            let currentTime = CMTimeGetSeconds(player.currentTime())
+            let newTime = currentTime + seconds
+            
+            if newTime <= currentDuration ?? 0 {
+                let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: Int32.max)
+                player.seek(to: timeToSeek)
+            } else {
+                // Handle seeking beyond the duration of the media
+                // You may want to pause or stop playback here
+            }
+        }
+    }
+    
+    
 
-       func seekBackward(seconds: Double) {
-           if let player = basePlayer {
-               let currentTime = CMTimeGetSeconds(player.currentTime())
-               let newTime = max(currentTime - seconds, 0)
-               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
-               player.seek(to: timeToSeek)
-           }
-       }
+//       func seekBackward(seconds: Double) {
+//           if let player = basePlayer {
+//               let currentTime = CMTimeGetSeconds(player.currentTime())
+//               let newTime = max(currentTime - seconds, 0)
+//               let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: 1)
+//               player.seek(to: timeToSeek)
+//           }
+//       }
+    
+    
+    func seekBackward(seconds: Double) {
+        if let player = basePlayer {
+            let currentTime = CMTimeGetSeconds(player.currentTime())
+            let newTime = max(currentTime - seconds, 0)
+            
+            // Use a higher timescale for better precision
+            let preferredTimescale: Int32 = Int32.max // You can adjust this value as needed
+            
+            let timeToSeek = CMTimeMakeWithSeconds(newTime, preferredTimescale: preferredTimescale)
+            player.seek(to: timeToSeek)
+        }
+    }
+
 }

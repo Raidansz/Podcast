@@ -43,7 +43,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
 
             if let url = URL(string: episode.streamUrl) {
                 PlayerManager.shared.playEpisode(url: url)
-                
+                print(url)
             
                 enlargeEpisodeImage()
                 

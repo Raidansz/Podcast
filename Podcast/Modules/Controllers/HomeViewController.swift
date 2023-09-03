@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftUI
+import Speech
+
 enum Sections:Int{
     case Subscriptions = 0
     case YouMightLike = 1
@@ -43,10 +45,40 @@ class HomeViewController: UIViewController {
         swift?.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 650)
         homeFeedTable.tableHeaderView = swift
        
-       
         
+        
+        if let audioURL = URL(string: "https://op3.dev/e,pg=9b024349-ccf0-5f69-a609-6b82873eab3c/podnews.net/audio/podnews230830.mp3") {
+            transcribeAudio(from: audioURL) { transcription, error in
+                if let transcription = transcription {
+                    print("Transcription: \(transcription)")
+                } else if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 
+    
+    
+    func transcribeAudio(from url: URL, completion: @escaping (String?, Error?) -> Void) {
+        let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")) // Change the locale as needed
+        let request = SFSpeechURLRecognitionRequest(url: url)
+        
+        recognizer?.recognitionTask(with: request) { result, error in
+            guard let result = result else {
+                completion(nil, error)
+                return
+            }
+            
+            if result.isFinal {
+                completion(result.bestTranscription.formattedString, nil)
+            }
+        }
+    }
+
+    
+    
+    
 
 }
 
