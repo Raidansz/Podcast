@@ -12,11 +12,26 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
     func playbackTimeDidChange(currentTime: Double, duration: Double) {
         let progress = Float(currentTime / duration)
                progressBar.setProgress(progress, animated: true)
+        
+        
+        // Calculate the elapsed time
+        let elapsedTime = currentTime
+
+        // Calculate the time left
+        let timeLeft = duration - elapsedTime
+
+        // Update the UILabels with the formatted time values
+        elapsedTimeLabel.text = formatTime(time: elapsedTime)
+        timeLeftLabel.text = "-\(formatTime(time: timeLeft))"
+        
+        
     }
     
     var currentEpisodePlayer: AVPlayer?
     
-
+    @IBOutlet weak var timeLeftLabel: UILabel!
+    @IBOutlet weak var elapsedTimeLabel: UILabel!
+    
     @IBOutlet weak var minVolumeSlider: UISlider!
     
     @IBOutlet weak var progressBar: UIProgressView!
@@ -118,7 +133,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
             return .success
         }
         
-        //TODO: Set up other commands like skip forward, skip backward, etc.
+       
         
         // Update the now playing info using MPNowPlayingInfoCenter
         var nowPlayingInfo: [String: Any] = [:]
@@ -153,7 +168,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
     }
     
     @objc func handleTapGesture(_ gesture: UITapGestureRecognizer) {
-        guard let duration = PlayerManager.shared.currentDuration else {
+        guard let duration = PlayerManager.shared.basePlayer?.currentTime().seconds else {
             return
         }
         
@@ -213,6 +228,27 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
        
     }
    
+    
+    
+
+       // Helper method to format time in HH:MM:SS format
+    func formatTime(time: Double) -> String {
+        let hours = Int(time) / 3600
+        let minutes = (Int(time) % 3600) / 60
+        let seconds = Int(time) % 60
+        
+        if hours > 0 {
+            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        } else if minutes > 0 {
+            return String(format: "%02d:%02d", minutes, seconds)
+        } else {
+            return String(format: "00:%02d", seconds)
+        }
+    }
+
+   
+    
+    
     
     @IBAction func Backwards(_ sender: UIButton) {
         PlayerManager.shared.seekBackward(seconds: 15)
