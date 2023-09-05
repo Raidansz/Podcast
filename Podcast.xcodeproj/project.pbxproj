@@ -10,10 +10,7 @@
 		AA040227298EF838007ECD54 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA040226298EF838007ECD54 /* FeedKit */; };
 		AA040229299838D9007ECD54 /* RSSFeed+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */; };
 		AA04022B29983912007ECD54 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022A29983912007ECD54 /* Episode.swift */; };
-		AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04022E2998399D007ECD54 /* NetworkingService.swift */; };
-		AA040231299839EC007ECD54 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA040230299839EC007ECD54 /* iTunesAPI.swift */; };
 		AA04023429983A4D007ECD54 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AA04023329983A4D007ECD54 /* Moya */; };
-		AA04023729983C54007ECD54 /* PodcastsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04023629983C54007ECD54 /* PodcastsService.swift */; };
 		AA04023929990FBD007ECD54 /* PodcastsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */; };
 		AA040247299931DC007ECD54 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */; };
 		AA04024929993208007ECD54 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04024829993208007ECD54 /* PodcastTableViewCell.swift */; };
@@ -59,9 +56,6 @@
 /* Begin PBXFileReference section */
 		AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RSSFeed+Extension.swift"; sourceTree = "<group>"; };
 		AA04022A29983912007ECD54 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
-		AA04022E2998399D007ECD54 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		AA040230299839EC007ECD54 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
-		AA04023629983C54007ECD54 /* PodcastsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsService.swift; sourceTree = "<group>"; };
 		AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchController.swift; sourceTree = "<group>"; };
 		AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		AA04024829993208007ECD54 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,32 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA04022C2998395E007ECD54 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				AA04023529983C37007ECD54 /* PodcastsService */,
-				AA04022D29983977007ECD54 /* Networking */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		AA04022D29983977007ECD54 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				AA04022E2998399D007ECD54 /* NetworkingService.swift */,
-				AA040230299839EC007ECD54 /* iTunesAPI.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		AA04023529983C37007ECD54 /* PodcastsService */ = {
-			isa = PBXGroup;
-			children = (
-				AA04023629983C54007ECD54 /* PodcastsService.swift */,
-			);
-			path = PodcastsService;
-			sourceTree = "<group>";
-		};
 		AA04023A29991093007ECD54 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +236,6 @@
 		AA77106F292063CF009FDBAA /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
-				AA04022C2998395E007ECD54 /* Services */,
 				AA771081292063D0009FDBAA /* Info.plist */,
 				AAD997AB2980A384006DCC9E /* Other */,
 				AAD997A82980A333006DCC9E /* Extensions */,
@@ -458,8 +425,6 @@
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
-				AA04022F2998399D007ECD54 /* NetworkingService.swift in Sources */,
-				AA04023729983C54007ECD54 /* PodcastsService.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
 				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
@@ -479,7 +444,6 @@
 				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
-				AA040231299839EC007ECD54 /* iTunesAPI.swift in Sources */,
 				AA040229299838D9007ECD54 /* RSSFeed+Extension.swift in Sources */,
 				AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */,
 				AA04023929990FBD007ECD54 /* PodcastsSearchController.swift in Sources */,

@@ -14,19 +14,20 @@ enum Sections:Int{
     case YouMightLike = 1
     case Trending = 2
 }
+
 class HomeViewController: UIViewController {
     var feed:Feed?
     let sectionTitles : [String] = ["Subscriptions","You Might Like", "Trending"]
-
     
- 
     
- let myView =  CollectionViewTableViewCell()
+    
+    
+    let myView =  CollectionViewTableViewCell()
     private let homeFeedTable:UITableView = {
         let table = UITableView(frame: .zero,style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         table.showsVerticalScrollIndicator = false
-       
+        
         return table
     }()
     
@@ -41,48 +42,37 @@ class HomeViewController: UIViewController {
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
+        settingSwiftUiPoster()
+        
+        
+        //https://op3.dev/e,pg=9b024349-ccf0-5f69-a609-6b82873eab3c/podnews.net/audio/podnews230830.mp3
+        
+        
+        
+    }
+    
+    
+    
+    func settingSwiftUiPoster(){
         let swift = UIHostingController(rootView: SwiftUIView()).view
         swift?.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 650)
         homeFeedTable.tableHeaderView = swift
-       
         
         
-        if let audioURL = URL(string: "https://op3.dev/e,pg=9b024349-ccf0-5f69-a609-6b82873eab3c/podnews.net/audio/podnews230830.mp3") {
-            transcribeAudio(from: audioURL) { transcription, error in
-                if let transcription = transcription {
-                    print("Transcription: \(transcription)")
-                } else if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                }
-            }
-        }
+        
     }
-
-    
-    
-    func transcribeAudio(from url: URL, completion: @escaping (String?, Error?) -> Void) {
-        let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")) // Change the locale as needed
-        let request = SFSpeechURLRecognitionRequest(url: url)
-        
-        recognizer?.recognitionTask(with: request) { result, error in
-            guard let result = result else {
-                completion(nil, error)
-                return
-            }
-            
-            if result.isFinal {
-                completion(result.bestTranscription.formattedString, nil)
-            }
-        }
-    }
-
     
     
     
-
 }
 
 
+
+
+
+
+
+// MARK: - Customization for the CollectionView
 extension HomeViewController: UITableViewDelegate,UITableViewDataSource,CollectionViewTableViewCellDelegate{
     func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell,viewModel: PosterPreviewViewModel, indexPath: IndexPath) {
         
@@ -91,12 +81,11 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
             let vc = EpisodesTableViewController()
             vc.podcast = self?.feed
             self?.navigationController?.pushViewController(vc, animated: true)
-         
+            
             
         }
     }
     
-   
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -116,7 +105,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
         default:
             return 0
         }
-       
+        
     }
     
     
@@ -180,7 +169,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
                 
             }
             
-         
+            
         default:
             return UITableViewCell()
         }
@@ -195,37 +184,37 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-  
-    
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-////                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
-////    changeTabBar(hidden: true, animated: true)
-////            }
-////               else{
-////    changeTabBar(hidden: false, animated: true)
-////              }
-//   }
-    
-//    func changeTabBar(hidden:Bool, animated: Bool){
-//        let tabBar = self.tabBarController?.tabBar
-//        if tabBar!.isHidden == hidden{ return }
-//        let frame = tabBar?.frame
-//        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
-//        let duration:TimeInterval = (animated ? 0.5 : 0.0)
-//        tabBar?.isHidden = false
-//        if frame != nil
-//        {
-//            UIView.animate(withDuration: duration,
-//                animations: {tabBar!.frame = CGRectOffset(frame!, 0, offset)},
-//                completion: {
-//
-//                if $0 {tabBar?.isHidden = hidden}
-//            })
-//        }
-//    }
     
     
-
+    //    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    ////                if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
+    ////    changeTabBar(hidden: true, animated: true)
+    ////            }
+    ////               else{
+    ////    changeTabBar(hidden: false, animated: true)
+    ////              }
+    //   }
+    
+    //    func changeTabBar(hidden:Bool, animated: Bool){
+    //        let tabBar = self.tabBarController?.tabBar
+    //        if tabBar!.isHidden == hidden{ return }
+    //        let frame = tabBar?.frame
+    //        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
+    //        let duration:TimeInterval = (animated ? 0.5 : 0.0)
+    //        tabBar?.isHidden = false
+    //        if frame != nil
+    //        {
+    //            UIView.animate(withDuration: duration,
+    //                animations: {tabBar!.frame = CGRectOffset(frame!, 0, offset)},
+    //                completion: {
+    //
+    //                if $0 {tabBar?.isHidden = hidden}
+    //            })
+    //        }
+    //    }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitles[section]
