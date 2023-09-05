@@ -21,4 +21,10 @@ extension String {
     func replaceSpacesWithPlus(line:String) -> String{
         return line.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
     }
+    
+    
+  
+    
+    
+    
 }

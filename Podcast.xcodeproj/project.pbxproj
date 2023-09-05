@@ -22,6 +22,7 @@
 		AA628144298836DA002967DD /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA628142298836DA002967DD /* EpisodeTableViewCell.xib */; };
 		AA62814629884664002967DD /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA62814529884664002967DD /* PlayerDetailsView.xib */; };
 		AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA628147298849CE002967DD /* PlayerDetailsView.swift */; };
+		AA679A832AA768AF00B1B249 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA679A822AA768AF00B1B249 /* Double+Extensions.swift */; };
 		AA73B4CF2A8BFE8D00F45B9A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73B4CE2A8BFE8D00F45B9A /* PlayerManager.swift */; };
 		AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771070292063CF009FDBAA /* AppDelegate.swift */; };
 		AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA771072292063CF009FDBAA /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 		AA628142298836DA002967DD /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		AA62814529884664002967DD /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
 		AA628147298849CE002967DD /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		AA679A822AA768AF00B1B249 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		AA73B4CE2A8BFE8D00F45B9A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		AA77106D292063CF009FDBAA /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA771070292063CF009FDBAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				AAD997B42980A4DD006DCC9E /* UILabel+Extensions.swift */,
 				AA62813D29873D6A002967DD /* String+Extensions.swift */,
 				AA040228299838D9007ECD54 /* RSSFeed+Extension.swift */,
+				AA679A822AA768AF00B1B249 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
+				AA679A832AA768AF00B1B249 /* Double+Extensions.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
 				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
