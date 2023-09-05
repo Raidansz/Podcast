@@ -130,7 +130,7 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
         }
         
         let tapPoint = gesture.location(in: progressBar)
-        let progress = max(0, min(1, Float(tapPoint.x / progressBar.bounds.width)))
+        let progress = Float(tapPoint.x / progressBar.bounds.width)
         let seekTime = Double(progress) * duration
         
         PlayerManager.shared.seekForward(seconds: seekTime)
@@ -150,7 +150,8 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
             let translation = gesture.translation(in: progressBar)
             let xOffset = translation.x
             let totalWidth = progressBar.bounds.width
-            let progress = max(0, min(1, Float(xOffset / totalWidth)))
+            let progress =  Float(xOffset / totalWidth)
+            print(progress)
             let seekTime = Double(progress) * duration
             PlayerManager.shared.seekForward(seconds: seekTime)
         case .ended:
