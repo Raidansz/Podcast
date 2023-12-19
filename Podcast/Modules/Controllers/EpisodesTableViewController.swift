@@ -53,7 +53,7 @@ class EpisodesTableViewController: UITableViewController {
     
     func setupTableView(){
         let nib = UINib(nibName: EpisodeTableViewCell().identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: Constants.cell_Identifier)
+        tableView.register(nib, forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
     
@@ -105,7 +105,7 @@ extension EpisodesTableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? EpisodeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? EpisodeTableViewCell
         let episode = episodes[indexPath.row]
         cell?.episode = episode
         cell?.episodeImageView.sd_setImage(with: URL(string: episode.imageUrl ?? ""))
@@ -117,14 +117,14 @@ extension EpisodesTableViewController{
         let episode = episodes[indexPath.row]
         let window = UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.keyWindow }.first
         //UIApplication.shared.keyWindow
-        let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as! PlayerDetailsView
-        playerDetailsView.episode = episode
-        playerDetailsView.episodeImage.sd_setImage(with: URL(string: self.podcast?.image ?? self.searchPodcast?.artworkUrl600 ?? ""))
-        playerDetailsView.frame = self.view.frame
-        window?.addSubview(playerDetailsView)
+        let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self)?.first as? PlayerDetailsView
+        playerDetailsView!.episode = episode
+        playerDetailsView!.episodeImage.sd_setImage(with: URL(string: self.podcast?.image ?? self.searchPodcast?.artworkUrl600 ?? ""))
+        playerDetailsView!.frame = self.view.frame
+        window?.addSubview(playerDetailsView!)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.playerDetailsViewREF = playerDetailsView
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate!.playerDetailsViewREF = playerDetailsView
     }
     
     

@@ -10,9 +10,9 @@ import SwiftUI
 import Speech
 
 enum Sections:Int{
-    case Subscriptions = 0
-    case YouMightLike = 1
-    case Trending = 2
+    case subscriptions = 0
+    case youMightLike = 1
+    case trending = 2
 }
 
 class HomeViewController: UIViewController {
@@ -93,13 +93,13 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
-        case Sections.Subscriptions.rawValue:
+        case Sections.subscriptions.rawValue:
             return 1
             
-        case Sections.YouMightLike.rawValue:
+        case Sections.youMightLike.rawValue:
             return 2
             
-        case Sections.Trending.rawValue:
+        case Sections.trending.rawValue:
             return 2
             
         default:
@@ -115,7 +115,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for:indexPath) as? CollectionViewTableViewCell else { return UITableViewCell()}
         cell.delegate = self
         switch indexPath.section{
-        case Sections.Subscriptions.rawValue:
+        case Sections.subscriptions.rawValue:
             APICaller.shared.getTrending { results in
                 switch results{
                 case .success(let result):
@@ -132,7 +132,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
             }
             
             
-        case Sections.YouMightLike.rawValue:
+        case Sections.youMightLike.rawValue:
             
             APICaller.shared.getTrending { results in
                 switch results{
@@ -150,7 +150,7 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,Collecti
                 
                 
             }
-        case Sections.Trending.rawValue:
+        case Sections.trending.rawValue:
             
             APICaller.shared.getTrending { results in
                 switch results{

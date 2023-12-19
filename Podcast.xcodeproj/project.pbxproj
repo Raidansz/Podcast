@@ -14,6 +14,9 @@
 		AA04023929990FBD007ECD54 /* PodcastsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */; };
 		AA040247299931DC007ECD54 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */; };
 		AA04024929993208007ECD54 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA04024829993208007ECD54 /* PodcastTableViewCell.swift */; };
+		AA280F932C5E8BD700EF6B30 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F922C5E8BD700EF6B30 /* HomeViewModel.swift */; };
+		AA280F952C5E959900EF6B30 /* EpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F942C5E959900EF6B30 /* EpisodeListView.swift */; };
+		AA280F972C5E98DA00EF6B30 /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F962C5E98DA00EF6B30 /* EpisodeListViewModel.swift */; };
 		AA3FB93E299E29F50073FE5E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93D299E29F50073FE5E /* SearchResult.swift */; };
 		AA3FB940299E2A0F0073FE5E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93F299E2A0F0073FE5E /* Feed.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
@@ -37,6 +40,8 @@
 		AA7B7AB329720B360060004E /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */; };
 		AA8C2D23297B628B00D8A9E9 /* PosterPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */; };
 		AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */; };
+		AAA4E1EF2C58513000133D6B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4E1EE2C58513000133D6B /* HomeView.swift */; };
+		AAA4E1F12C58582900133D6B /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4E1F02C58582900133D6B /* HomeCellView.swift */; };
 		AAB0F193292141570084B7F6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F192292141570084B7F6 /* SDWebImage */; };
 		AAB0F195292141570084B7F6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAB0F194292141570084B7F6 /* SDWebImageMapKit */; };
 		AAD99761297DC040006DCC9E /* XmlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD99760297DC040006DCC9E /* XmlManager.swift */; };
@@ -60,6 +65,9 @@
 		AA04023829990FBD007ECD54 /* PodcastsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchController.swift; sourceTree = "<group>"; };
 		AA040246299931DC007ECD54 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		AA04024829993208007ECD54 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		AA280F922C5E8BD700EF6B30 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AA280F942C5E959900EF6B30 /* EpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListView.swift; sourceTree = "<group>"; };
+		AA280F962C5E98DA00EF6B30 /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
 		AA3FB93D299E29F50073FE5E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AA3FB93F299E2A0F0073FE5E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -85,6 +93,8 @@
 		AA7B7AB229720B360060004E /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		AA8C2D22297B628B00D8A9E9 /* PosterPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPreviewViewModel.swift; sourceTree = "<group>"; };
 		AA9FDD3D29736C9B00DEB8ED /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAA4E1EE2C58513000133D6B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AAA4E1F02C58582900133D6B /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
 		AAD99760297DC040006DCC9E /* XmlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlManager.swift; sourceTree = "<group>"; };
 		AAD99762297DCAC2006DCC9E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		AAD99776297EF3B4006DCC9E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -247,6 +257,11 @@
 				AA771072292063CF009FDBAA /* SceneDelegate.swift */,
 				AA771079292063CF009FDBAA /* Podcast.xcdatamodeld */,
 				AA4AB64C29219B3F0092405B /* Models */,
+				AAA4E1EE2C58513000133D6B /* HomeView.swift */,
+				AAA4E1F02C58582900133D6B /* HomeCellView.swift */,
+				AA280F922C5E8BD700EF6B30 /* HomeViewModel.swift */,
+				AA280F942C5E959900EF6B30 /* EpisodeListView.swift */,
+				AA280F962C5E98DA00EF6B30 /* EpisodeListViewModel.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -339,6 +354,7 @@
 				AA771069292063CF009FDBAA /* Sources */,
 				AA77106A292063CF009FDBAA /* Frameworks */,
 				AA77106B292063CF009FDBAA /* Resources */,
+				AAA4E1F62C585CF500133D6B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -365,8 +381,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					AA77106C292063CF009FDBAA = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -389,6 +408,7 @@
 				AAD9976E297EEEF4006DCC9E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				AA040225298EF838007ECD54 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				AA04023229983A4D007ECD54 /* XCRemoteSwiftPackageReference "Moya" */,
+				AAA4E1F22C585A3400133D6B /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = AA77106E292063CF009FDBAA /* Products */;
 			projectDirPath = "";
@@ -415,16 +435,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AAA4E1F62C585CF500133D6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA771069292063CF009FDBAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AA628143298836DA002967DD /* EpisodeTableViewCell.swift in Sources */,
+				AA280F972C5E98DA00EF6B30 /* EpisodeListViewModel.swift in Sources */,
 				AAD99789297EF3B4006DCC9E /* CustomTabBarItem.swift in Sources */,
 				AA3FB93E299E29F50073FE5E /* SearchResult.swift in Sources */,
 				AAD997B32980A498006DCC9E /* UIView+Extensions.swift in Sources */,
 				AA3FB940299E2A0F0073FE5E /* Feed.swift in Sources */,
+				AAA4E1F12C58582900133D6B /* HomeCellView.swift in Sources */,
 				AA77108C292066C9009FDBAA /* Podcast.swift in Sources */,
 				AAD99781297EF3B4006DCC9E /* CustomTabBarController.swift in Sources */,
 				AAD99763297DCAC2006DCC9E /* SwiftUIView.swift in Sources */,
@@ -442,13 +484,16 @@
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
 				AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */,
 				AAD997B52980A4DD006DCC9E /* UILabel+Extensions.swift in Sources */,
+				AA280F932C5E8BD700EF6B30 /* HomeViewModel.swift in Sources */,
 				AA628148298849CE002967DD /* PlayerDetailsView.swift in Sources */,
 				AA73B4CF2A8BFE8D00F45B9A /* PlayerManager.swift in Sources */,
 				AAD997B12980A46E006DCC9E /* UiStackView+Extensions.swift in Sources */,
 				AAD997AF2980A43A006DCC9E /* Array+Extensions.swift in Sources */,
 				AA9FDD3E29736C9B00DEB8ED /* PosterCollectionViewCell.swift in Sources */,
+				AAA4E1EF2C58513000133D6B /* HomeView.swift in Sources */,
 				AA77108A29206661009FDBAA /* APICaller.swift in Sources */,
 				AA040229299838D9007ECD54 /* RSSFeed+Extension.swift in Sources */,
+				AA280F952C5E959900EF6B30 /* EpisodeListView.swift in Sources */,
 				AA7B7AB1297206420060004E /* HomeViewController.swift in Sources */,
 				AA04023929990FBD007ECD54 /* PodcastsSearchController.swift in Sources */,
 				AA8C2D23297B628B00D8A9E9 /* PosterPreviewViewModel.swift in Sources */,
@@ -513,6 +558,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -527,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -573,6 +619,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -581,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -599,6 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 534SAT4S5S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Podcast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -606,6 +654,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +679,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 534SAT4S5S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Podcast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -637,6 +687,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,6 +742,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 15.0.0;
+			};
+		};
+		AAA4E1F22C585A3400133D6B /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
 			};
 		};
 		AAB0F191292141570084B7F6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {

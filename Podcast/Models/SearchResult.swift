@@ -9,8 +9,8 @@ import Foundation
 // Raw output
 struct Result:Codable {
 
-    var count:Int
-    var feeds:[Feed] // Podcasts
+    var count: Int
+    var feeds: [Feed] // Podcasts
 }
 
 struct SearchResults:Decodable{

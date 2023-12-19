@@ -8,7 +8,7 @@
 import Foundation
 
 // Actual array of podcasts
-struct Feed:Codable{
+struct Feed: Codable, Identifiable{
     var title:String
     var id:Int
    var url:String

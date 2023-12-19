@@ -10,7 +10,7 @@ import Foundation
 class XmlManager:NSObject,XMLParserDelegate{
 
     static let shared = XmlManager()
-    public var Episodes: [Episode] = []
+    public var episodes: [Episode] = []
    
     var elementName: String = String()
     var titleText:String = String()

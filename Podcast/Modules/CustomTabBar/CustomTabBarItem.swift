@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum CustomTabBarItem: String, CaseIterable {
     case profile
@@ -17,17 +18,17 @@ enum CustomTabBarItem: String, CaseIterable {
  
 extension CustomTabBarItem {
     var viewController: UIViewController {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
         
         switch self {
     
         case .profile:
-            return UINavigationController(rootViewController: HomeViewController())
+            return UINavigationController(rootViewController: UIHostingController(rootView: HomeView(viewModel: HomeViewModel())))
         case .play:
 
         
-            let customView = appDelegate.playerDetailsViewREF
+            let customView = appDelegate!.playerDetailsViewREF
             
             if let safe =  customView {
                 print("goooood")

@@ -50,7 +50,7 @@ class PodcastsSearchController:UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell_Identifier, for: indexPath) as? PodcastTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? PodcastTableViewCell
        
         cell?.podcast = podcasts[indexPath.row]
         return cell ?? UITableViewCell()

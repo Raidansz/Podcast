@@ -12,15 +12,15 @@ import CryptoKit
 
 struct Constants{
     //public static let API_base = "https://api.podcastindex.org/api/1.0/search/byterm?q="
-    public static let API_base = "https://api.podcastindex.org/api/1.0/"
-    public static let POD_Identifier = "GoTo"
-    public static let cell_Identifier = "cell"
-    public static let EPSO_Identifier = "EPS"
-    public static let Play_Identifier = "play"
+    public static let aPIbase = "https://api.podcastindex.org/api/1.0/"
+    public static let pODIdentifier = "GoTo"
+    public static let cellIdentifier = "cell"
+    public static let ePSOIdentifier = "EPS"
+    public static let playIdentifier = "play"
     public static var sharedImage = ""
     public static let apiKey = "9YARVVTCERVCNJQJDAAT"
         public static let apiSecret = "dr75yrNvyQQGw4afAYzG7x72n7#Fy3KcevhcXXrj"
-    public static let Home_Cell = "Homecell"
+    public static let homeCell = "Homecell"
     public static let takeMeToPodcast =  "takeMeToPodcast"
 }
 
@@ -52,7 +52,7 @@ class APICaller{
         let hashed = Insecure.SHA1.hash(data: inputData)
         let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
         // ======== Send the request and collect/show the results ========
-       let url = Constants.API_base + "podcasts/trending?max=20?lang=en"
+       let url = Constants.aPIbase + "podcasts/trending?max=20?lang=en"
       
         
         var request = URLRequest(url: URL(string:url)!)

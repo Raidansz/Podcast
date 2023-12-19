@@ -8,8 +8,9 @@
 import FeedKit
 import Foundation
 
-struct Episode: Codable {
-
+struct Episode: Codable, Identifiable {
+    var id: String
+    
     let title: String
     let pubDate: Date
     let description: String
@@ -26,5 +27,6 @@ struct Episode: Codable {
         description = feedItem.iTunes?.iTunesSubtitle ?? feedItem.description ?? ""
         author = feedItem.iTunes?.iTunesAuthor ?? ""
         imageUrl = feedItem.iTunes?.iTunesImage?.attributes?.href
+        id = feedItem.guid?.value ?? ""
     }
 }
