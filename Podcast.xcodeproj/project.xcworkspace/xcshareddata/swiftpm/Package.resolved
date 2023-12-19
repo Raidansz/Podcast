@@ -1,0 +1,77 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
+      }
+    },
+    {
+      "identity" : "feedkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nmdias/FeedKit.git",
+      "state" : {
+        "revision" : "68493a33d862c33c9a9f67ec729b3b7df1b20ade",
+        "version" : "9.1.2"
+      }
+    },
+    {
+      "identity" : "moya",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Moya/Moya.git",
+      "state" : {
+        "revision" : "c263811c1f3dbf002be9bd83107f7cdc38992b26",
+        "version" : "15.0.3"
+      }
+    },
+    {
+      "identity" : "reactiveswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+      "state" : {
+        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+        "version" : "6.7.0"
+      }
+    },
+    {
+      "identity" : "rxgesture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxGesture.git",
+      "state" : {
+        "revision" : "1b137c576b4aaaab949235752278956697c9e4a0",
+        "version" : "4.0.4"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "80683c20d8f15e10ac1ce605cca5008a295846bd",
+        "version" : "5.14.1"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

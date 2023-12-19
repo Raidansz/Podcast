@@ -125,42 +125,42 @@ class PlayerDetailsView:UIView, PlayerManagerDelegate{
     }
     
     @objc func handleTapGesture(_ gesture: UITapGestureRecognizer) {
-        guard let duration = PlayerManager.shared.basePlayer?.currentTime().seconds else {
-            return
-        }
-        
-        let tapPoint = gesture.location(in: progressBar)
-        let progress = Float(tapPoint.x / progressBar.bounds.width)
-        let seekTime = Double(progress) * duration
-        
-        PlayerManager.shared.seekForward(seconds: seekTime)
-    }
+           guard let duration = PlayerManager.shared.basePlayer?.currentTime().seconds else {
+               return
+           }
+           
+           let tapPoint = gesture.location(in: progressBar)
+           let progress = Float(tapPoint.x / progressBar.bounds.width)
+           let seekTime = Double(progress) * duration
+           
+           PlayerManager.shared.seekForward(seconds: seekTime)
+           
+           progressBar.setProgress(progress, animated: true)
+       }
     
     
     @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        guard let duration = PlayerManager.shared.currentDuration else {
-            return
-        }
-        
-        switch gesture.state {
-        case .began:
-            // Handle gesture began state (e.g., pause playback)
-            break
-        case .changed:
-            let translation = gesture.translation(in: progressBar)
-            let xOffset = translation.x
-            let totalWidth = progressBar.bounds.width
-            let progress =  Float(xOffset / totalWidth)
-            print(progress)
-            let seekTime = Double(progress) * duration
-            PlayerManager.shared.seekForward(seconds: seekTime)
-        case .ended:
-            // Handle gesture ended state (e.g., resume playback)
-            break
-        default:
-            break
-        }
-    }
+           guard let duration = PlayerManager.shared.currentDuration else {
+               return
+           }
+           
+           switch gesture.state {
+           case .began:
+               PlayerManager.shared.basePlayer?.pause()
+           case .changed:
+               let translation = gesture.translation(in: progressBar)
+               let xOffset = translation.x
+               let totalWidth = progressBar.bounds.width
+               let progress =  Float(xOffset / totalWidth)
+               print(progress)
+               let seekTime = Double(progress) * duration
+               PlayerManager.shared.seekForward(seconds: seekTime)
+           case .ended:
+               PlayerManager.shared.basePlayer?.play()
+           default:
+               break
+           }
+       }
     
     
     
