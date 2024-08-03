@@ -8,42 +8,40 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
+    @StateObject var viewModel: HomeViewModel
+
     var body: some View {
         NavigationStack {
-            HStack(content: {
-                Text("Promoted Podcasts")
+            VStack(alignment: .leading) {
+                Text("Home")
                     .bold()
-                    .frame(alignment: .leading)
                     .padding(.horizontal, 35)
-                Spacer()
-            })
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(viewModel.podcastList) { podcast in
-                        HomeCellView(podcast: podcast , image: podcast.artwork , isStandAloneCell: true)
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(viewModel.podcastList) { podcast in
+                            HomeCellView(podcast: podcast, image: podcast.artwork, isStandAloneCell: true)
+                        }
                     }
-                    .listStyle(.plain)
-                    
+                    .padding()
                 }
-                .padding()
+
+                HStack {
+                    Text("Trending Podcasts")
+                        .bold()
+                        .padding(.trailing, 105)
+                    Spacer()
+                    Text("see more")
+                }
+                .padding(.horizontal, 35)
+
+                List(viewModel.podcastList) { podcast in
+                    HomeCellView(podcast: podcast, image: podcast.artwork, isStandAloneCell: false)
+                }
+                .listStyle(.plain)
             }
-            HStack(content: {
-                Text("Trending Podcasts")
-                    .bold()
-                    .frame(alignment: .leading)
-                    .padding(.trailing, 105)
-                Text("see more")
-                
-            })
-            List(viewModel.podcastList) { podcast in
-                HomeCellView(podcast:podcast, image: podcast.artwork, isStandAloneCell: false)
-            }
-            .listStyle(.plain)
-            
-            
+            .preferredColorScheme(.light)
         }
-        .preferredColorScheme(.light)
     }
 }
 

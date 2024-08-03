@@ -35,52 +35,53 @@ enum APIError:Error{
 class APICaller{
     static let shared = APICaller()
     
-//     var result = "test"
-//     var feeds:[Feed]?
-     
-     
-    
-    func getTrending(completion: @escaping (Swift.Result<[Feed], Error>) -> Void){
-      
-        // prep for crypto
-        let timeInSeconds: TimeInterval = Date().timeIntervalSince1970
-        let apiHeaderTime = Int(timeInSeconds)
+    func getTrending(completion: @escaping (Swift.Result<[Feed], Error>) -> Void) {
+        // Prep for crypto
+        let apiHeaderTime = Int(Date().timeIntervalSince1970)
         let data4Hash = Constants.apiKey + Constants.apiSecret + "\(apiHeaderTime)"
         
-        // ======== Hash them to get the Authorization token ========
+        // Hash them to get the Authorization token
         let inputData = Data(data4Hash.utf8)
         let hashed = Insecure.SHA1.hash(data: inputData)
-        let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
-        // ======== Send the request and collect/show the results ========
-       let url = Constants.aPIbase + "podcasts/trending?max=20?lang=en"
-      
+        let hashString = hashed.map { String(format: "%02x", $0) }.joined()
         
-        var request = URLRequest(url: URL(string:url)!)
+        // Construct URL
+        let urlString = Constants.aPIbase + "podcasts/trending?max=20&lang=en"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        
+        // Configure URLRequest
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue( "\(apiHeaderTime)", forHTTPHeaderField: "X-Auth-Date")
-        request.addValue( Constants.apiKey, forHTTPHeaderField: "X-Auth-Key")
-        request.addValue( hashString, forHTTPHeaderField: "Authorization")
-        request.addValue( "SuperPodcastPlayer/1.8", forHTTPHeaderField: "User-Agent")
-        let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, _, error -> Void in
-           // print(data!)
-            guard let data = data, error == nil else {
-           
+        request.addValue("\(apiHeaderTime)", forHTTPHeaderField: "X-Auth-Date")
+        request.addValue(Constants.apiKey, forHTTPHeaderField: "X-Auth-Key")
+        request.addValue(hashString, forHTTPHeaderField: "Authorization")
+        request.addValue("SuperPodcastPlayer/1.8", forHTTPHeaderField: "User-Agent")
+        
+        // Perform network request
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
                 return
             }
-            do{
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data received", code: 0, userInfo: nil)))
+                return
+            }
+            
+            do {
                 let results = try JSONDecoder().decode(Result.self, from: data)
                 completion(.success(results.feeds))
-            }catch{
+            } catch {
                 completion(.failure(error))
             }
-
-           
         }
-        )
-        task.resume()
-        
+        .resume()
     }
+
     
     
     
