@@ -1,5 +1,4 @@
 {
-  "originHash" : "ececc52ca6309384ceff8add1abf2d01d8a043265d95e933ca07869d6a4551fb",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -11,6 +10,7 @@
       }
     },
     {
+
       "identity" : "collectionconcurrencykit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
@@ -29,6 +29,8 @@
       }
     },
     {
+
+
       "identity" : "feedkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nmdias/FeedKit.git",
@@ -90,6 +92,7 @@
         "revision" : "f222cbdf325885926566172f6f5f06af95473158",
         "version" : "5.6.0"
       }
+
     },
     {
       "identity" : "sourcekitten",
@@ -156,4 +159,4 @@
     }
   ],
   "version" : 3
-}
+      }
