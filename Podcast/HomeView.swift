@@ -15,13 +15,13 @@ struct HomeView: View {
                 Text("Promoted Podcasts")
                     .bold()
                     .frame(alignment: .leading)
-                    .padding(.horizontal,35)
+                    .padding(.horizontal, 35)
                 Spacer()
             })
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.podcastList) { podcast in
-                        HomeCellView(podcast: podcast, isStandAloneCell: true)
+                        HomeCellView(podcast: podcast , image: podcast.artwork , isStandAloneCell: true)
                     }
                     .listStyle(.plain)
                     
@@ -33,12 +33,11 @@ struct HomeView: View {
                     .bold()
                     .frame(alignment: .leading)
                     .padding(.trailing, 105)
-                // Spacer()
                 Text("see more")
                 
             })
             List(viewModel.podcastList) { podcast in
-                HomeCellView(podcast: podcast, isStandAloneCell: false)
+                HomeCellView(podcast:podcast, image: podcast.artwork, isStandAloneCell: false)
             }
             .listStyle(.plain)
             

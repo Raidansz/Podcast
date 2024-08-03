@@ -9,13 +9,19 @@ import SwiftUI
 struct HomeCellView: View {
     var podcast: Feed?
     var image: String?
+    @State private var navigateToEpisodeList = false
     var isStandAloneCell: Bool
     var body: some View {
+        ZStack {
+            NavigationLink(destination: EpisodeListView(viewModel: EpisodeListViewModel(with: podcast?.url ?? "")), isActive: $navigateToEpisodeList) {
+                EmptyView()
+            }
+            
+
         if isStandAloneCell {
          
                 Button(action: {
-                    let viewModel = EpisodeListViewModel(with: podcast?.url ?? "")
-                    let view = EpisodeListView(viewModel: viewModel)
+                    navigateToEpisodeList = true
                 }, label: {
                     AsyncImage(url: URL(string: image ?? "")) { image in
                         image
@@ -58,14 +64,9 @@ struct HomeCellView: View {
                 Image(uiImage: UIImage(systemName: "play.circle.fill")!)
                         .resizable()
                         .frame(width: 48, height: 48)
-    //                    .padding(.trailing, 32)
                 }
             })
         } 
-
+        }
     }
 }
-
-//#Preview {
-//    HomeCellView(podcast: .in)
-//}
