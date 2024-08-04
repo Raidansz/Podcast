@@ -12,7 +12,7 @@ struct EpisodeListView: View {
     @State private var selectedEpisode: Episode?
 
     var body: some View {
-        NavigationView {
+      //  NavigationView {
             VStack {
                 if let imageUrl = selectedEpisode?.imageUrl {
                     AsyncImage(url: URL(string: imageUrl)) { phase in
@@ -46,13 +46,14 @@ struct EpisodeListView: View {
                             self.shouldPlay = true
                         }
                 }
-            }
+           // }
             .background(
                 NavigationLink(destination: AudioPlayerView(viewModel: AudioPlayerViewModel(audioFile: selectedEpisode?.streamUrl ?? "")), isActive: $shouldPlay) {
                     EmptyView()
                 }
             )
-            .navigationBarTitle("Episodes", displayMode: .inline)
+//            .navigationBarTitle("Episodes", displayMode: .inline)
+//            .navigationBarBackButtonHidden()
         }
     }
 }

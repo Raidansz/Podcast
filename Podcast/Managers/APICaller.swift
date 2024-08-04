@@ -19,7 +19,7 @@ struct Constants{
     public static let playIdentifier = "play"
     public static var sharedImage = ""
     public static let apiKey = "9YARVVTCERVCNJQJDAAT"
-        public static let apiSecret = "dr75yrNvyQQGw4afAYzG7x72n7#Fy3KcevhcXXrj"
+    public static let apiSecret = "dr75yrNvyQQGw4afAYzG7x72n7#Fy3KcevhcXXrj"
     public static let homeCell = "Homecell"
     public static let takeMeToPodcast =  "takeMeToPodcast"
 }
@@ -81,13 +81,13 @@ class APICaller{
         }
         .resume()
     }
+    
+    
+    
+    
+    
+    
+}
 
-    
-    
-    
-   
-
-    }
-    
 
 
