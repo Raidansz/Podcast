@@ -19,6 +19,9 @@
 		AA280F972C5E98DA00EF6B30 /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F962C5E98DA00EF6B30 /* EpisodeListViewModel.swift */; };
 		AA280F9D2C5EA77000EF6B30 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F9C2C5EA77000EF6B30 /* AudioPlayerViewModel.swift */; };
 		AA280F9F2C5EA79E00EF6B30 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280F9E2C5EA79E00EF6B30 /* AudioPlayerView.swift */; };
+		AA280FAB2C5FBE8A00EF6B30 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280FAA2C5FBE8A00EF6B30 /* SnapCarousel.swift */; };
+		AA280FAD2C5FBF0600EF6B30 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280FAC2C5FBF0600EF6B30 /* DetailView.swift */; };
+		AA280FAF2C5FBF5800EF6B30 /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA280FAE2C5FBF5800EF6B30 /* OffsetModifier.swift */; };
 		AA3FB93E299E29F50073FE5E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93D299E29F50073FE5E /* SearchResult.swift */; };
 		AA3FB940299E2A0F0073FE5E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FB93F299E2A0F0073FE5E /* Feed.swift */; };
 		AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62813D29873D6A002967DD /* String+Extensions.swift */; };
@@ -64,6 +67,9 @@
 		AA280F962C5E98DA00EF6B30 /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
 		AA280F9C2C5EA77000EF6B30 /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
 		AA280F9E2C5EA79E00EF6B30 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		AA280FAA2C5FBE8A00EF6B30 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
+		AA280FAC2C5FBF0600EF6B30 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AA280FAE2C5FBF5800EF6B30 /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
 		AA3FB93D299E29F50073FE5E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		AA3FB93F299E2A0F0073FE5E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		AA62813D29873D6A002967DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				AAA4E1EE2C58513000133D6B /* HomeView.swift */,
 				AAA4E1F02C58582900133D6B /* HomeCellView.swift */,
 				AA280F922C5E8BD700EF6B30 /* HomeViewModel.swift */,
+				AA280FAA2C5FBE8A00EF6B30 /* SnapCarousel.swift */,
+				AA280FAC2C5FBF0600EF6B30 /* DetailView.swift */,
+				AA280FAE2C5FBF5800EF6B30 /* OffsetModifier.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -230,8 +239,8 @@
 		AA77106F292063CF009FDBAA /* Podcast */ = {
 			isa = PBXGroup;
 			children = (
-				AA280FA42C5EFFE400EF6B30 /* Screens */,
 				AA771081292063D0009FDBAA /* Info.plist */,
+				AA280FA42C5EFFE400EF6B30 /* Screens */,
 				AAD997AB2980A384006DCC9E /* Other */,
 				AAD997A82980A333006DCC9E /* Extensions */,
 				AA7BD9072923868B00860930 /* Managers */,
@@ -437,12 +446,15 @@
 				AA679A832AA768AF00B1B249 /* Double+Extensions.swift in Sources */,
 				AAD99785297EF3B4006DCC9E /* CustomTabBar.swift in Sources */,
 				AA62814029882458002967DD /* EpisodesTableViewController.swift in Sources */,
+				AA280FAB2C5FBE8A00EF6B30 /* SnapCarousel.swift in Sources */,
 				AA62813E29873D6A002967DD /* String+Extensions.swift in Sources */,
 				AA04024929993208007ECD54 /* PodcastTableViewCell.swift in Sources */,
 				AA04022B29983912007ECD54 /* Episode.swift in Sources */,
 				AA771071292063CF009FDBAA /* AppDelegate.swift in Sources */,
+				AA280FAF2C5FBF5800EF6B30 /* OffsetModifier.swift in Sources */,
 				AA77107B292063CF009FDBAA /* Podcast.xcdatamodeld in Sources */,
 				AA280F9D2C5EA77000EF6B30 /* AudioPlayerViewModel.swift in Sources */,
+				AA280FAD2C5FBF0600EF6B30 /* DetailView.swift in Sources */,
 				AA771073292063CF009FDBAA /* SceneDelegate.swift in Sources */,
 				AA280F9F2C5EA79E00EF6B30 /* AudioPlayerView.swift in Sources */,
 				AAD99782297EF3B4006DCC9E /* CustomItemView.swift in Sources */,
