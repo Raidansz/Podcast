@@ -9,7 +9,6 @@ import Foundation
 import AVKit
 
 class AudioPlayerViewModel: ObservableObject {
-    @Published var player: AVPlayer?
     @Published var isPlaying = false
     @Published var totalTime: TimeInterval = 0.0
     @Published var currentTime: TimeInterval = 0.0
@@ -25,37 +24,37 @@ class AudioPlayerViewModel: ObservableObject {
             print("Invalid URL for audio file")
             return
         }
-        player = AVPlayer(url: url)
-        player?.play()
+
+        PlayerManager.shared.playEpisode(url: url)
+        PlayerManager.shared.basePlayer?.play()
         isPlaying = true
         addPeriodicTimeObserver()
     }
 
     private func addPeriodicTimeObserver() {
-        guard let player = player else { return }
-        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.1, preferredTimescale: 600), queue: .main) { [weak self] time in
+      
+        timeObserver = PlayerManager.shared.basePlayer?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.1, preferredTimescale: 600), queue: .main) { [weak self] time in
             self?.updateProgress(time: time)
         }
     }
 
     private func updateProgress(time: CMTime) {
-        guard let player = player else { return }
         currentTime = CMTimeGetSeconds(time)
-        totalTime = CMTimeGetSeconds(player.currentItem?.duration ?? CMTime())
+        totalTime = CMTimeGetSeconds(PlayerManager.shared.basePlayer?.currentItem?.duration ?? CMTime())
     }
 
     func playAudio() {
-        player?.play()
+        PlayerManager.shared.basePlayer?.play()
         isPlaying = true
     }
 
     func pauseAudio() {
-        player?.pause()
+        PlayerManager.shared.basePlayer?.pause()
         isPlaying = false
     }
 
     func seekToTime(_ time: TimeInterval) {
         let newTime = CMTime(seconds: time, preferredTimescale: 600)
-        player?.seek(to: newTime)
+        PlayerManager.shared.basePlayer?.seek(to: newTime)
     }
 }
