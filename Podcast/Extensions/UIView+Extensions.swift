@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UIView {
     func setupCornerRadius(_ cornerRadius: CGFloat = 0, maskedCorners: CACornerMask? = nil) {
         layer.cornerRadius = cornerRadius

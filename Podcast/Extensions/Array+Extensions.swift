@@ -20,7 +20,4 @@ extension Array {
             return head + tail.chunked(by: distance)
         }
     }
-    
-    
-    
 }

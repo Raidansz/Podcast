@@ -3,7 +3,6 @@
 //  Podcast
 //
 //  Created by Raidan on 30/07/2024.
-//"https://picsum.photos/200/300"
 
 import SwiftUI
 
@@ -82,7 +81,6 @@ struct HomeCellView: View {
                             Text(podcast?.title ?? "Unknown Title")
                                 .frame(alignment: .leading)
                                 .frame(alignment: .leading)
-                          
                         }
                         Spacer()
                         Image(systemName: "play.circle.fill")
